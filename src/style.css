@@ -298,6 +298,12 @@ body {
   width: 100%;
 }
 
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* --- Hero Section --- */
 .hero-section {
   min-height: 100vh;
@@ -336,7 +342,8 @@ body {
 }
 .hero-actions {
   display: flex;
-  gap: 15px;
+  flex-wrap: wrap; /* Prevents button line breaking mobile width flow bounds */
+  gap: 12px;
 }
 
 .type-cursor {
@@ -743,7 +750,8 @@ body {
 
 .project-tech {
   display: flex;
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 10px 15px; /* row-gap column-gap */
   margin-bottom: 25px;
 }
 .project-tech span {
@@ -1084,10 +1092,12 @@ body {
   .hero-title { font-size: 3.5rem; }
   .hero-subtitle { font-size: 2.2rem; }
   .about-grid { grid-template-columns: 1fr; }
-  .navbar { padding: 0 2rem; }
+  .navbar { padding: 0 1.5rem; }
+  .nav-links { display: none !important; } /* Hide redundant links behind burger on Tablet */
+  
   .exp-wrapper { grid-template-columns: 1fr; }
-  .exp-tabs { flex-direction: row; overflow-x: auto; position: static; }
-  .exp-tab { min-width: 180px; flex-shrink: 0; }
+  .exp-tabs { flex-direction: row; overflow-x: auto; position: static; padding-bottom: 5px; }
+  .exp-tab { min-width: 170px; flex-shrink: 0; }
   .exp-tab-indicator { width: auto; height: 4px; }
   .exp-metrics { grid-template-columns: repeat(2, 1fr); }
   .exp-panel-role { font-size: 1.8rem; }
@@ -1096,14 +1106,26 @@ body {
 }
 
 @media (max-width: 600px) {
-  .hero-title { font-size: 2.8rem; }
-  .hero-subtitle { font-size: 1.8rem; }
-  .nav-links { display: none; }
-  .navbar { justify-content: space-between; }
-  .contact-box { padding: 30px; }
-  .exp-metrics { grid-template-columns: repeat(2, 1fr); }
+  .hero-title { font-size: 2.3rem; } /* Slightly reduce title width size constraints */
+  .hero-subtitle { font-size: 1.5rem; }
+  .navbar { justify-content: space-between; padding: 0 1rem; }
+  
+  /* Prevent 'Hire Me' button overlap with hamburger on mobile height/width setup */
+  .nav-cta { gap: 8px; }
+  .nav-cta .btn { padding: 8px 14px; font-size: 0.8rem; } 
+
+  .about-stats-bento { grid-template-columns: 1fr; } /* Stack bento single column so text isn't squashed */
+  .bento-box.long { grid-column: span 1; }
+
+  .skills-grid { grid-template-columns: 1fr; } /* Stack skills items single column layout for readability */
+
+  .contact-box { padding: 35px 20px; }
+  .exp-metrics { grid-template-columns: 1fr; } 
   .exp-panel-role { font-size: 1.5rem; }
-  .footer-nav { gap: 16px; }
+  .footer-nav { gap: 16px; flex-direction: column; }
+  
+  .project-card { padding: 30px 20px; flex-direction: column; } /* Projects stack mobile view */
+  .project-mockup { width: 100%; margin: 20px 0 0 0; }
 }
 
 
