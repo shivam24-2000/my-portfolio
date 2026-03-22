@@ -49,6 +49,13 @@
       <a href="#contact" class="nav-item">Contact</a>
     </nav>
     <div class="nav-cta">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+        <div class="toggle-track">
+          <div class="toggle-icon sun"><i class="fa-solid fa-sun"></i></div>
+          <div class="toggle-icon moon"><i class="fa-solid fa-moon"></i></div>
+          <div class="toggle-ball"></div>
+        </div>
+      </button>
       <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-outline">Hire Me</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -74,6 +81,17 @@
           <a href="https://www.linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="btn btn-secondary"><i
               class="fa-brands fa-linkedin"></i> LinkedIn</a>
         </div>
+        
+        <!-- What I'm Building Now Widget -->
+        <a href="javascript:void(0)" id="building-modal-trigger" class="building-widget">
+          <div class="building-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="building-text">
+            <span class="building-label">What I'm building now</span>
+            <span class="building-title">AI Interview Prep Platform</span>
+          </div>
+          <i class="fa-solid fa-arrow-right building-arrow"></i>
+        </a>
+        
       </div>
       <div class="scroll-indicator">
         <span>Scroll Down</span>
@@ -338,7 +356,7 @@
 
         <div class="projects-list">
           <!-- Project 1 -->
-          <div class="project-card" data-tilt>
+          <div class="project-card" id="ai-interview-prep" data-tilt>
             <div class="project-content">
               <span class="project-tag">TypeScript / AI</span>
               <h3 class="project-card-title">AI Interview Prep Platform</h3>
@@ -398,7 +416,7 @@
       <div class="container">
         <div class="glass-container contact-box">
           <h2 class="contact-title">Let’s Connect</h2>
-          <p class="contact-desc">Ready to bring top-tier performance to your development workflows. I am currently open
+          <p class="contact-desc">Let’s build together! Ready to bring top-tier performance to your development workflows. I am currently open
             to exciting distributed engineering opportunities.</p>
           <div class="contact-methods">
             <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-primary btn-glow">Get In Touch</a>
@@ -444,6 +462,54 @@
 
   <!-- Back to Top Button -->
   <button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- What I'm Building Modal -->
+  <div class="preview-modal" id="previewModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content creative-modal">
+      <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="modal-split">
+        <!-- Left: Code Mockup -->
+        <div class="modal-code-mockup project-mockup">
+          <div class="mockup-header">
+            <i></i><i></i><i></i>
+            <span class="mockup-title">ai-mentor.ts</span>
+          </div>
+          <div class="mockup-body">
+            <div class="code-line"><span class="c-keyword">async function</span> <span class="c-func">analyzeComplexity</span>(code) {</div>
+            <div class="code-line indent">  <span class="c-comment">// Friday AI actively monitoring...</span></div>
+            <div class="code-line indent">  <span class="c-keyword">const</span> ast = parser.parse(code);</div>
+            <div class="code-line indent">  <span class="c-keyword">return</span> {</div>
+            <div class="code-line indent-2">    time: <span class="c-string">"O(N log N)"</span>,</div>
+            <div class="code-line indent-2">    space: <span class="c-string">"O(1)"</span>,</div>
+            <div class="code-line indent-2">    feedback: <span class="c-string">"Optimize sort logic"</span></div>
+            <div class="code-line indent">  };</div>
+            <div class="code-line">}</div>
+            <div class="ai-typing-indicator"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- Right: Info -->
+        <div class="modal-info">
+          <div class="modal-badge"><i class="fa-solid fa-microchip"></i> Next.js / Supabase / WebRTC</div>
+          <h2 class="modal-title">AI Interview Prep</h2>
+          <p class="modal-tagline">An interactive dashboard engineered with robust AI-driven interview simulation environments.</p>
+          
+          <ul class="creative-features">
+            <li><i class="fa-solid fa-brain"></i> <div><strong>Real-Time AI Mentor</strong><span>Instant time/space feedback with dual-model failover.</span></div></li>
+            <li><i class="fa-solid fa-terminal"></i> <div><strong>Virtual Execution</strong><span>Run JS, Java, Python, C++ via remote engine execution.</span></div></li>
+            <li><i class="fa-solid fa-microphone"></i> <div><strong>Voice Assistant</strong><span>Talk to "Friday" natively via WebRTC dictation flows.</span></div></li>
+            <li><i class="fa-solid fa-users"></i> <div><strong>P2P Mock Interviews</strong><span>Live video socket feeds powered by Supabase channels.</span></div></li>
+          </ul>
+          
+          <a href="https://github.com/shivam24-2000/AI-Powered-Coding-Interview-Preparation-Platform-with-Real-Time-Code-Analysis" target="_blank" class="btn btn-primary modal-action-btn">
+            View Live Repository <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>

@@ -494,4 +494,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 15. --- What I'm Building Modal ---
+    const buildingTrigger = document.getElementById('building-modal-trigger');
+    const previewModal = document.getElementById('previewModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    if (buildingTrigger && previewModal) {
+        // Open Modal
+        buildingTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            previewModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        // Close Modal via X button
+        if (modalClose) {
+            modalClose.addEventListener('click', () => {
+                previewModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close Modal via outside click overlay
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', () => {
+                previewModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+    }
+
+    // 16. --- Theme Toggle (Light/Dark Mode) ---
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    
+    // Check for saved user preference, if any, on load of the website
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+
+    if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            
+            if (theme === 'light') {
+                // Switch to Dark
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Switch to Light
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+
 });
