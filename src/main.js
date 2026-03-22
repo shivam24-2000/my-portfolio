@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Smooth lagging effect
         cursorX += (mouseX - cursorX) * 0.15;
         cursorY += (mouseY - cursorY) * 0.15;
-        
-        if(cursor) {
+
+        if (cursor) {
             cursor.style.left = `${cursorX}px`;
             cursor.style.top = `${cursorY}px`;
         }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('a, .btn, .bento-box, .project-card, .social-icon');
     links.forEach(link => {
         link.addEventListener('mouseenter', () => {
-            if(cursor) {
+            if (cursor) {
                 cursor.style.width = '50px';
                 cursor.style.height = '50px';
                 cursor.style.borderColor = 'var(--accent-secondary)';
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         link.addEventListener('mouseleave', () => {
-            if(cursor) {
+            if (cursor) {
                 cursor.style.width = '30px';
                 cursor.style.height = '30px';
                 cursor.style.borderColor = 'rgba(255,255,255,0.5)';
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. --- Particle Canvas Background ---
     const canvas = document.getElementById('particle-canvas');
-    if(canvas) {
+    if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
         let width = canvas.width = window.innerWidth;
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const id = entry.target.getAttribute('id');
                 navItems.forEach(item => {
                     item.classList.remove('active');
-                    if(item.getAttribute('href') === `#${id}`) {
+                    if (item.getAttribute('href') === `#${id}`) {
                         item.classList.add('active');
                     }
                 });
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3.5 --- Scroll Progress Bar ---
     const progressBar = document.getElementById('scroll-progress');
     window.addEventListener('scroll', () => {
-        if(progressBar) {
+        if (progressBar) {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
@@ -233,10 +233,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. --- Smooth Entrance Scroll Effects with Stagger ---
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if(entry.isIntersecting) {
+            if (entry.isIntersecting) {
                 entry.target.style.opacity = 1;
                 entry.target.style.transform = 'translateY(0)';
-                
+
                 // Trigger number counter if it has the class
                 const numEl = entry.target.querySelector('.count-up');
                 if (numEl && !numEl.classList.contains('counted')) {
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     let startTimestamp = null;
                     const duration = 2000;
                     const endVal = parseInt(numEl.getAttribute('data-count'));
-                    
+
                     const step = (timestamp) => {
                         if (!startTimestamp) startTimestamp = timestamp;
                         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
@@ -277,12 +277,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const rect = box.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const xRotation = -5 * ((y - rect.height / 2) / (rect.height / 2));
             const yRotation = 5 * ((x - rect.width / 2) / (rect.width / 2));
-            
+
             box.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) translateY(-5px)`;
-            
+
             // Spotlight tracking Custom properties
             box.style.setProperty('--mouse-x', `${x}px`);
             box.style.setProperty('--mouse-y', `${y}px`);
@@ -304,8 +304,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function typeLoop() {
             currentPhrase = phrases[i];
-            typewriter.innerHTML = isDeleting 
-                ? currentPhrase.substring(0, letterCount--) 
+            typewriter.innerHTML = isDeleting
+                ? currentPhrase.substring(0, letterCount--)
                 : currentPhrase.substring(0, letterCount++);
 
             let typeSpeed = isDeleting ? 40 : 80;
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 7. --- Copy email to clipboard on Contact Actions ---
     const emailBtn = document.querySelector('.btn-primary.btn-glow');
-    if(emailBtn) {
+    if (emailBtn) {
         emailBtn.addEventListener('click', (e) => {
             e.preventDefault();
             navigator.clipboard.writeText('shivamsinghal24@gmail.com').then(() => {
@@ -365,20 +365,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Prevent nesting child scrambling by targeting exact element structure or ignore if empty
         const originalText = el.innerText;
         el.dataset.value = originalText;
-        
+
         el.addEventListener('mouseenter', () => {
             let iterations = 0;
             const val = el.dataset.value;
             const interval = setInterval(() => {
                 el.innerText = val.split("").map((letter, index) => {
-                    if(index < iterations) {
+                    if (index < iterations) {
                         return val[index];
                     }
                     if (val[index] === ' ' || val[index] === '\n') return val[index];
                     return scrambleLetters[Math.floor(Math.random() * scrambleLetters.length)];
                 }).join("");
-                
-                if(iterations >= val.length){
+
+                if (iterations >= val.length) {
                     clearInterval(interval);
                 }
                 iterations += 1;
@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const termHistory = document.getElementById('terminal-history');
     if (termInput && termHistory) {
         const commands = {
-            'help': 'Available commands: help, whoami, projects, contact, clear, skills, sudo, hire',
+            'help': 'Available commands: help, whoami, projects, contact, clear, skills, sudo, hire, matrix',
             'whoami': 'Full Stack Developer & AI enthusiast.',
             'projects': 'Accessing Projects Portfolio...\n1. AI Interview Prep Platform\n2. Trekr (iOS/Swift)\n3. Weather Monitoring IoT',
             'contact': 'Let\'s connect! Email: shivamsinghal24@gmail.com | LinkedIn: /in/shivam-singhal-538369191/',
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
         termInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 const val = termInput.value.trim().toLowerCase();
-                
+
                 // Add user command to history
                 const cmdLine = document.createElement('div');
                 cmdLine.className = 'terminal-line';
@@ -416,6 +416,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (val === 'clear') {
                     termHistory.innerHTML = '';
+                } else if (val === 'matrix') {
+                    const isMatrix = document.documentElement.getAttribute('data-theme') === 'matrix';
+                    const outLine = document.createElement('div');
+                    outLine.className = 'terminal-line output';
+
+                    if (isMatrix) {
+                        const base = localStorage.getItem('theme') || 'dark';
+                        if (base === 'light') document.documentElement.setAttribute('data-theme', 'light');
+                        else document.documentElement.removeAttribute('data-theme');
+                        outLine.innerText = 'Matrix simulation terminated... standard operating procedures restored.';
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'matrix');
+                        outLine.innerText = 'Wake up, Neo... Visualizing simulation. (Type "matrix" again to exit)';
+                    }
+                    termHistory.appendChild(outLine);
                 } else if (val !== '') {
                     // Output response
                     const outLine = document.createElement('div');
@@ -424,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     outLine.innerText = output;
                     termHistory.appendChild(outLine);
                 }
-                
+
                 termInput.value = '';
                 termHistory.scrollTop = termHistory.scrollHeight;
             }
@@ -527,7 +542,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 16. --- Theme Toggle (Light/Dark Mode) ---
     const themeToggleBtn = document.getElementById('theme-toggle');
-    
+
     // Check for saved user preference, if any, on load of the website
     const currentTheme = localStorage.getItem('theme') || 'dark';
 
@@ -538,7 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
             let theme = document.documentElement.getAttribute('data-theme');
-            
+
             if (theme === 'light') {
                 // Switch to Dark
                 document.documentElement.removeAttribute('data-theme');
