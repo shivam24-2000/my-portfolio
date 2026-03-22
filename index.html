@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Singhal | Full Stack Developer</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <!-- Boot-up Preloader -->
+  <div id="preloader">
+    <div id="boot-terminal"></div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Background Blur Orbs -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="logo">
+      <span class="logo-txt">S</span><span class="logo-dot">.</span>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="#hero" class="nav-item active">Home</a>
+      <a href="#about" class="nav-item">About</a>
+      <a href="#experience" class="nav-item">Experience</a>
+      <a href="#projects" class="nav-item">Projects</a>
+      <a href="#contact" class="nav-item">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-outline">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section">
+      <div class="container">
+        <div class="hero-open-badge"><span class="open-dot"></span> Open to Work</div>
+        <p class="hero-sub">Hi, my name is</p>
+        <h1 class="hero-title">Shivam Singhal<span class="accent-dot">.</span></h1>
+        <h2 class="hero-subtitle"><span id="typewriter"></span><span class="type-cursor">|</span></h2>
+        <p class="hero-desc">I’m a Full Stack Developer specializing in building robust backends with SpringBoot & clean
+          architectures, while packing seamless frontends. Currently accelerating product engineering using TypeScript,
+          Swift, & C++ solutions.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="https://github.com/shivam24-2000" target="_blank" class="btn btn-secondary"><i
+              class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="btn btn-secondary"><i
+              class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infinite Tech Marquee -->
+    <div class="tech-marquee-wrapper">
+      <div class="tech-marquee">
+        <div class="marquee-track">
+          <!-- First set -->
+          <span><i class="fa-brands fa-java"></i> Java </span>
+          <span><i class="fa-brands fa-swift"></i> Swift </span>
+          <span><i class="fa-brands fa-node-js"></i> SpringBoot </span>
+          <span><i class="fa-solid fa-code"></i> C++ </span>
+          <span><i class="fa-brands fa-react"></i> Next.js </span>
+          <span><i class="fa-solid fa-database"></i> Supabase </span>
+          <span><i class="fa-brands fa-docker"></i> Docker </span>
+          <span><i class="fa-solid fa-brain"></i> AI Integrations </span>
+          <span><i class="fa-solid fa-microchip"></i> Hardware IoT </span>
+          <!-- Second set (same exactly) -->
+          <span><i class="fa-brands fa-java"></i> Java </span>
+          <span><i class="fa-brands fa-swift"></i> Swift </span>
+          <span><i class="fa-brands fa-node-js"></i> SpringBoot </span>
+          <span><i class="fa-solid fa-code"></i> C++ </span>
+          <span><i class="fa-brands fa-react"></i> Next.js </span>
+          <span><i class="fa-solid fa-database"></i> Supabase </span>
+          <span><i class="fa-brands fa-docker"></i> Docker </span>
+          <span><i class="fa-solid fa-brain"></i> AI Integrations </span>
+          <span><i class="fa-solid fa-microchip"></i> Hardware IoT </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- About & Skills Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span class="number">01.</span> About Me</h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I thrive at the intersection of performance systems and intelligent designs. My approach focuses on Clean
+              Architecture and scalable pipelines, ensuring apps remain maintainable long-term.</p>
+            <p>From developing full-featured visual dashboards to engineering lightweight communication nodes, I adapt
+              my design stacks around the exact requirements to create peak efficiency.</p>
+            <div class="skills-wrap">
+              <h3>Core Technologies</h3>
+              <div class="skills-grid">
+                <div class="skill-item"><i class="fa-brands fa-java skill-icon java"></i> Java / Spring Boot</div>
+                <div class="skill-item"><i class="fa-brands fa-square-js skill-icon js"></i> TypeScript / Node.js</div>
+                <div class="skill-item"><i class="fa-brands fa-swift skill-icon swift"></i> Swift / iOS</div>
+                <div class="skill-item"><span class="skill-icon cpp">C++</span> Systems/C++</div>
+                <div class="skill-item"><i class="fa-brands fa-react skill-icon react"></i> React / Next.js</div>
+                <div class="skill-item"><i class="fa-solid fa-database skill-icon db"></i> Supabase / SQL</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-stats-bento">
+            <div class="bento-box">
+              <span class="bento-number count-up" data-count="28">0</span>
+              <span class="bento-label">Repositories</span>
+            </div>
+            <div class="bento-box">
+              <span class="bento-number">C++</span>
+              <span class="bento-label">IoT / Hardware</span>
+            </div>
+            <div class="bento-box long">
+              <span class="bento-number">Swift</span>
+              <span class="bento-label">Mobile Apps</span>
+            </div>
+            <div class="bento-box long">
+              <span class="bento-number">AI</span>
+              <span class="bento-label">Smart Integrations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Easter Egg -->
+        <div class="terminal-container" data-tilt>
+          <div class="terminal-header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">guest@shivamsinghal:~</div>
+          </div>
+          <div class="terminal-body" id="terminal-history">
+            <div class="terminal-line"><span class="term-prompt">guest@shivam:~$</span> <span
+                class="term-cmd">./start.sh</span></div>
+            <div class="terminal-line output">System initialized. Type <span
+                style="color:var(--accent-primary)">'help'</span> to see available commands.</div>
+          </div>
+          <div class="terminal-input-line">
+            <span class="term-prompt">guest@shivam:~$</span>
+            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" maxlength="50">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span class="number">02.</span> Experience</h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="exp-wrapper">
+
+          <!-- Left: Company Selector Tabs -->
+          <div class="exp-tabs">
+            <div class="exp-tab active" data-tab="boa">
+              <div class="exp-tab-indicator"></div>
+              <div class="exp-tab-content">
+                <span class="exp-tab-company">Bank of America</span>
+                <span class="exp-tab-role">SDE I</span>
+                <span class="exp-tab-period">2023 – Present</span>
+              </div>
+            </div>
+            <div class="exp-tab" data-tab="incedo">
+              <div class="exp-tab-indicator"></div>
+              <div class="exp-tab-content">
+                <span class="exp-tab-company">Incedo Inc.</span>
+                <span class="exp-tab-role">Software Developer Intern</span>
+                <span class="exp-tab-period">Jan – Jun 2023</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Content Panels -->
+          <div class="exp-panels">
+
+            <!-- Bank of America Panel -->
+            <div class="exp-panel active" id="exp-boa">
+              <div class="exp-panel-top">
+                <div class="exp-panel-title-block">
+                  <div class="exp-live-badge"><span class="live-dot"></span> Currently Here</div>
+                  <h3 class="exp-panel-role">Software Development<br>Engineer I</h3>
+                  <p class="exp-panel-sub"><i class="fa-solid fa-building-columns"></i> Bank of America &nbsp;·&nbsp; <i
+                      class="fa-solid fa-location-dot"></i> Hyderabad, India &nbsp;·&nbsp; <i
+                      class="fa-regular fa-calendar"></i> Jul 2023 – Present</p>
+                </div>
+              </div>
+
+              <!-- Impact Metrics -->
+              <div class="exp-metrics">
+                <div class="exp-metric">
+                  <span class="exp-metric-val">60<span class="exp-metric-unit">%</span></span>
+                  <span class="exp-metric-label">SQL Latency Reduction</span>
+                </div>
+                <div class="exp-metric">
+                  <span class="exp-metric-val">80<span class="exp-metric-unit">%</span></span>
+                  <span class="exp-metric-label">Ops Overhead Eliminated</span>
+                </div>
+                <div class="exp-metric">
+                  <span class="exp-metric-val">$50K<span class="exp-metric-unit">+</span></span>
+                  <span class="exp-metric-label">Revenue Protected</span>
+                </div>
+                <div class="exp-metric">
+                  <span class="exp-metric-val">85<span class="exp-metric-unit">%</span></span>
+                  <span class="exp-metric-label">Incident Recurrence Down</span>
+                </div>
+              </div>
+
+              <!-- Bullets -->
+              <ul class="exp-bullets">
+                <li>Architected and deployed <strong>10+ Spring Boot microservices</strong>, reducing deployment lead
+                  time by <span class="hl">15%</span> and eliminating incidents (down <span class="hl">12%</span>).</li>
+                <li>Containerized legacy AutoSys batch jobs to <strong>OpenShift</strong>, removing <span
+                    class="hl">100%</span> of manual interventions & cutting overhead by <span class="hl">~80%</span>.
+                </li>
+                <li>Optimized Oracle SQL via execution plan analysis, cutting avg latency by <span class="hl">60%</span>
+                  for <span class="hl">5K+</span> daily users.</li>
+                <li>Prevented <span class="hl">$50K+</span> in lost transaction throughput by eliminating slow-query
+                  incidents.</li>
+                <li>Built <strong>Splunk alerting strategy</strong> improving MTTD & MTTR each by <span
+                    class="hl">~40%</span>.</li>
+                <li>Resolved <span class="hl">20+</span> SEV1/SEV2 incidents; post-incident process cut recurrence by
+                  <span class="hl">85%</span>.</li>
+                <li>Remediated <span class="hl">50+</span> CVEs across dependencies; passed external security audit with
+                  <span class="hl">zero findings</span>.</li>
+                <li>Migrated <span class="hl">6+</span> Spring MVC apps to Spring Boot + Docker, reducing maintenance by
+                  <span class="hl">~45%</span>.</li>
+              </ul>
+
+              <div class="exp-tech-stack">
+                <span>Spring Boot</span><span>OpenShift</span><span>Oracle
+                  SQL</span><span>Splunk</span><span>Docker</span><span>Microservices</span><span>Java</span><span>CI/CD</span>
+              </div>
+            </div>
+
+            <!-- Incedo Panel -->
+            <div class="exp-panel" id="exp-incedo">
+              <div class="exp-panel-top">
+                <div class="exp-panel-title-block">
+                  <div class="exp-intern-badge"><i class="fa-solid fa-graduation-cap"></i> Internship</div>
+                  <h3 class="exp-panel-role">Software<br>Developer Intern</h3>
+                  <p class="exp-panel-sub"><i class="fa-solid fa-building"></i> Incedo Inc. &nbsp;·&nbsp; <i
+                      class="fa-solid fa-location-dot"></i> Gurugram, India &nbsp;·&nbsp; <i
+                      class="fa-regular fa-calendar"></i> Jan – Jun 2023</p>
+                </div>
+              </div>
+
+              <!-- Impact Metrics -->
+              <div class="exp-metrics">
+                <div class="exp-metric">
+                  <span class="exp-metric-val">8<span class="exp-metric-unit">+</span></span>
+                  <span class="exp-metric-label">APIs Shipped</span>
+                </div>
+                <div class="exp-metric">
+                  <span class="exp-metric-val">100<span class="exp-metric-unit">%</span></span>
+                  <span class="exp-metric-label">Test Coverage</span>
+                </div>
+                <div class="exp-metric">
+                  <span class="exp-metric-val">82<span class="exp-metric-unit">%</span></span>
+                  <span class="exp-metric-label">Deploy Time Slashed</span>
+                </div>
+                <div class="exp-metric">
+                  <span class="exp-metric-val">50K<span class="exp-metric-unit">+</span></span>
+                  <span class="exp-metric-label">Daily Data Points</span>
+                </div>
+              </div>
+
+              <!-- Bullets -->
+              <ul class="exp-bullets">
+                <li>Built <span class="hl">8 backend APIs</span> with ASP.NET Core for a portfolio management platform —
+                  <span class="hl">100%</span> test coverage, release cycles cut from 14 → <span class="hl">10
+                    days</span>.</li>
+                <li>Engineered fully automated <strong>CI/CD pipeline</strong> via GitHub Actions — deploy cycle slashed
+                  from <span class="hl">45 min → 8 min</span> (<span class="hl">82%</span> faster).</li>
+                <li>Built real-time financial dashboards with <strong>Dash + Plotly</strong> processing <span
+                    class="hl">50K+</span> daily data points at <span class="hl">&lt;2s</span> latency.</li>
+              </ul>
+
+              <div class="exp-tech-stack">
+                <span>ASP.NET Core</span><span>GitHub
+                  Actions</span><span>Dash</span><span>Plotly</span><span>CI/CD</span><span>Python</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span class="number">03.</span> Selected Works</h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="projects-list">
+          <!-- Project 1 -->
+          <div class="project-card" data-tilt>
+            <div class="project-content">
+              <span class="project-tag">TypeScript / AI</span>
+              <h3 class="project-card-title">AI Interview Prep Platform</h3>
+              <p class="project-card-desc">An interactive prep dashboard with real-time analytics designed with
+                intelligent problem feeds for robust interview simulation environments.</p>
+              <div class="project-tech">
+                <span>Next.js</span><span>Supabase</span><span>AI Integration</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/shivam24-2000/AI-Powered-Coding-Interview-Preparation-Platform-with-Real-Time-Code-Analysis"
+                  target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Source</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-tilt>
+            <div class="project-content">
+              <span class="project-tag">Swift / iOS</span>
+              <h3 class="project-card-title">Trekr</h3>
+              <p class="project-card-desc">Intuitive, responsive travel tracking interface building robust location
+                rendering buffers in pure native rendering stacks.</p>
+              <div class="project-tech">
+                <span>Swift</span><span>SwiftUI</span><span>Maps API</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/shivam24-2000/Trekr" target="_blank" class="project-link"><i
+                    class="fa-brands fa-github"></i> Source</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-tilt>
+            <div class="project-content">
+              <span class="project-tag">C++ / IoT</span>
+              <h3 class="project-card-title">Weather Monitoring Station</h3>
+              <p class="project-card-desc">Highly optimized sensory computation interface engineered using continuous
+                feed sensors to buffer and parse environmental signals accurately.</p>
+              <div class="project-tech">
+                <span>C++</span><span>Arduino</span><span>Sensors</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/shivam24-2000/Weather-Montoring-Station" target="_blank"
+                  class="project-link"><i class="fa-brands fa-github"></i> Source</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="glass-container contact-box">
+          <h2 class="contact-title">Let’s Connect</h2>
+          <p class="contact-desc">Ready to bring top-tier performance to your development workflows. I am currently open
+            to exciting distributed engineering opportunities.</p>
+          <div class="contact-methods">
+            <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-primary btn-glow">Get In Touch</a>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="social-icon"><i
+                  class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/shivam24-2000" target="_blank" class="social-icon"><i
+                  class="fa-brands fa-github"></i></a>
+              <a href="mailto:shivamsinghal24@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo"><span class="logo-txt">S</span><span class="logo-dot">.</span></div>
+        <p class="footer-tagline">Building fast, clean &amp; scalable systems.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://github.com/shivam24-2000" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/shivam-singhal-538369191/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:shivamsinghal24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Designed &amp; Built by <span class="footer-name">Shivam Singhal</span> &nbsp;·&nbsp; &copy; 2026</span>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
