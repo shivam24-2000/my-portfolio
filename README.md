@@ -2,7 +2,7 @@
 
 > A high-performance, cinematic dark-mode portfolio showcasing full-stack engineering, enterprise backend systems, and mobile development.
 
-**Live at:** [shivamsinghal.dev](https://shivamsinghal.dev) 
+**Live at:** [[shivam-singhal.vercel.app](https://shivamsinghal.dev) ](https://shivam-singhal.vercel.app/)
 
 ---
 
