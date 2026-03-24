@@ -4,40 +4,41 @@
 */
 
 :root {
-  --bg-primary: #06070a;
-  --bg-secondary: #0d0f15;
-  --bg-tertiary: #141721;
+  --bg-primary: #020305;
+  --bg-secondary: #06090e;
+  --bg-tertiary: #0b0e15;
 
-  --accent-primary: #8a2be2;
-  /* Electric Purple */
-  --accent-secondary: #00f5d4;
-  /* Neon Teal */
-  --accent-glow: rgba(138, 43, 226, 0.5);
-  --accent-subtle: #9d4edd;
+  --accent-primary: #818cf8;
+  /* Soft Pastel Indigo */
+  --accent-secondary: #94a3b8;
+  /* Neutral Slate Gray */
+  --accent-glow: rgba(129, 140, 248, 0.1);
+  --accent-subtle: #4f46e5;
 
-  --text-main: #f1f3f9;
-  --text-muted: #8b9bb4;
-  --text-dark: #4b5a75;
+  --text-main: #f8fafc;
+  --text-muted: #64748b;
+  --text-dark: #475569;
 
   --nav-height: 80px;
   --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  --glass-border: rgba(255, 255, 255, 0.05);
-  --glass-bg: rgba(13, 15, 21, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.02);
+  --glass-bg: rgba(6, 9, 14, 0.8);
 
-  --orb-opacity: 0.4;
-  --marquee-bg: rgba(10, 10, 15, 0.7);
-  --btn-secondary-bg: rgba(255, 255, 255, 0.05);
-  --btn-secondary-hover: rgba(255, 255, 255, 0.1);
-  --project-card-bg: rgba(255, 255, 255, 0.02);
-  --terminal-header-bg: #111;
-  --terminal-body-bg: #06070a;
+  --orb-opacity: 0.06;
+  --marquee-bg: rgba(2, 3, 5, 0.9);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.02);
+  --btn-secondary-hover: rgba(255, 255, 255, 0.06);
+  --project-card-bg: rgba(255, 255, 255, 0.005);
+  --terminal-header-bg: #090b10;
+  --terminal-body-bg: #030407;
 
-  --open-badge-color: #27c93f;
-  --open-badge-bg: rgba(39, 201, 63, 0.08);
-  --modal-overlay-bg: rgba(6, 7, 10, 0.85);
+  --open-badge-color: #059669;
+  /* Muted Emerald */
+  --open-badge-bg: rgba(5, 150, 105, 0.05);
+  --modal-overlay-bg: rgba(2, 3, 5, 0.9);
 
-  --navbar-scrolled-bg: rgba(6, 7, 10, 0.95);
-  --nav-shadow: rgba(0, 0, 0, 0.4);
+  --navbar-scrolled-bg: rgba(2, 3, 5, 0.98);
+  --nav-shadow: rgba(0, 0, 0, 0.6);
 }
 
 [data-theme="light"] {
