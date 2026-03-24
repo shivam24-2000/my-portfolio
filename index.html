@@ -5,16 +5,27 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shivam Singhal | Full Stack Developer</title>
+  <title>Shivam Singhal | Backend/Platform Engineer</title>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/src/style.css">
+  
+  <style>
+    /* Local overrides for new content from user updating simple layout headers which didn't exist in style.css variables yet */
+    .open-work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+    @media (max-width: 768px) {
+      .open-work-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
@@ -36,32 +47,35 @@
   <div class="cursor"></div>
   <div class="cursor-dot"></div>
 
-  <!-- Navigation Header -->
-  <header class="navbar" id="navbar">
-    <div class="logo">
-      <span class="logo-txt">S</span><span class="logo-dot">.</span>
-    </div>
-    <nav class="nav-links" id="nav-links">
+  <nav class="navbar" id="navbar">
+    <div class="logo">S<span class="logo-dot">.</span></div>
+    
+    <div class="nav-links" id="nav-links">
       <a href="#hero" class="nav-item active">Home</a>
       <a href="#about" class="nav-item">About</a>
       <a href="#experience" class="nav-item">Experience</a>
       <a href="#projects" class="nav-item">Projects</a>
+      <a href="#open-to-work" class="nav-item">Open to Work</a>
       <a href="#contact" class="nav-item">Contact</a>
-    </nav>
+    </div>
+
     <div class="nav-cta">
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
         <div class="toggle-track">
           <div class="toggle-icon sun"><i class="fa-solid fa-sun"></i></div>
           <div class="toggle-icon moon"><i class="fa-solid fa-moon"></i></div>
           <div class="toggle-ball"></div>
         </div>
       </button>
-      <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-outline">Hire Me</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+
+      <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-primary">Hire Me</a>
+      
+      <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </header>
+  </nav>
 
   <main id="app">
     <!-- Hero Section -->
@@ -71,15 +85,27 @@
         <p class="hero-sub">Hi, my name is</p>
         <h1 class="hero-title">Shivam Singhal<span class="accent-dot">.</span></h1>
         <h2 class="hero-subtitle"><span id="typewriter"></span><span class="type-cursor">|</span></h2>
-        <p class="hero-desc">I’m a Full Stack Developer specializing in building robust backends with SpringBoot & clean
-          architectures, while packing seamless frontends. Currently accelerating product engineering using TypeScript,
-          Swift, & C++ solutions.</p>
+        
+        <p class="hero-desc">I build scalable microservice architectures and modernize legacy systems. At Bank of America, I architect distributed systems serving &lt;1M requests/day while reducing deployment time by 90% and operational overhead by 80%.</p>
+        
+        <p class="hero-desc" style="font-size: 1rem; color: var(--text-dark); margin-top: -15px; margin-bottom: 20px;">I specialize in: System design · High-scale optimization · DevOps modernization · Operational reliability</p>
+
+        <div class="project-tech" style="margin-bottom: 30px;">
+          <span>Spring Boot</span>
+          <span>Microservices</span>
+          <span>Docker/OpenShift</span>
+          <span>Oracle SQL</span>
+          <span>Kubernetes</span>
+          <span>CI/CD</span>
+          <span>Splunk/Observability</span>
+          <span>TypeScript</span>
+          <span>Swift/iOS</span>
+        </div>
+
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
-          <a href="https://github.com/shivam24-2000" target="_blank" class="btn btn-secondary"><i
-              class="fa-brands fa-github"></i> GitHub</a>
-          <a href="https://www.linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="btn btn-secondary"><i
-              class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/shivam24-2000" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         </div>
 
         <!-- What I'm Building Now Widget -->
@@ -91,8 +117,8 @@
           </div>
           <i class="fa-solid fa-arrow-right building-arrow"></i>
         </a>
-
       </div>
+
       <div class="scroll-indicator">
         <span>Scroll Down</span>
         <div class="mouse">
@@ -101,35 +127,7 @@
       </div>
     </section>
 
-    <!-- Infinite Tech Marquee -->
-    <div class="tech-marquee-wrapper">
-      <div class="tech-marquee">
-        <div class="marquee-track">
-          <!-- First set -->
-          <span><i class="fa-brands fa-java"></i> Java </span>
-          <span><i class="fa-brands fa-swift"></i> Swift </span>
-          <span><i class="fa-brands fa-node-js"></i> SpringBoot </span>
-          <span><i class="fa-solid fa-code"></i> C++ </span>
-          <span><i class="fa-brands fa-react"></i> Next.js </span>
-          <span><i class="fa-solid fa-database"></i> Supabase </span>
-          <span><i class="fa-brands fa-docker"></i> Docker </span>
-          <span><i class="fa-solid fa-brain"></i> AI Integrations </span>
-          <span><i class="fa-solid fa-microchip"></i> Hardware IoT </span>
-          <!-- Second set (same exactly) -->
-          <span><i class="fa-brands fa-java"></i> Java </span>
-          <span><i class="fa-brands fa-swift"></i> Swift </span>
-          <span><i class="fa-brands fa-node-js"></i> SpringBoot </span>
-          <span><i class="fa-solid fa-code"></i> C++ </span>
-          <span><i class="fa-brands fa-react"></i> Next.js </span>
-          <span><i class="fa-solid fa-database"></i> Supabase </span>
-          <span><i class="fa-brands fa-docker"></i> Docker </span>
-          <span><i class="fa-solid fa-brain"></i> AI Integrations </span>
-          <span><i class="fa-solid fa-microchip"></i> Hardware IoT </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- About & Skills Section -->
+    <!-- About Section -->
     <section id="about" class="section about-section">
       <div class="container">
         <div class="section-header">
@@ -139,38 +137,36 @@
 
         <div class="about-grid">
           <div class="about-text">
-            <p>I thrive at the intersection of performance systems and intelligent designs. My approach focuses on Clean
-              Architecture and scalable pipelines, ensuring apps remain maintainable long-term.</p>
-            <p>From developing full-featured visual dashboards to engineering lightweight communication nodes, I adapt
-              my design stacks around the exact requirements to create peak efficiency.</p>
+            <p>I thrive at the intersection of system architecture and operational excellence. My approach focuses on building scalable infrastructure that enables teams to move fast without sacrificing reliability.</p>
+            <p>I decompose monolithic systems into well-designed microservices. I optimize databases and APIs for scale. I build observability systems that reduce incident response time. I automate toil away so teams can focus on impact.</p>
+            
             <div class="skills-wrap">
-              <h3>Core Technologies</h3>
+              <h3>Core Frameworks</h3>
               <div class="skills-grid">
-                <div class="skill-item"><i class="fa-brands fa-java skill-icon java"></i> Java / Spring Boot</div>
-                <div class="skill-item"><i class="fa-brands fa-square-js skill-icon js"></i> TypeScript / Node.js</div>
-                <div class="skill-item"><i class="fa-brands fa-swift skill-icon swift"></i> Swift / iOS</div>
-                <div class="skill-item"><span class="skill-icon cpp">C++</span> Systems/C++</div>
-                <div class="skill-item"><i class="fa-brands fa-react skill-icon react"></i> React / Next.js</div>
-                <div class="skill-item"><i class="fa-solid fa-database skill-icon db"></i> Supabase / SQL</div>
+                <div class="skill-item"><i class="fa-solid fa-bolt skill-icon backend"></i> Spring Boot / Java</div>
+                <div class="skill-item"><i class="fa-brands fa-docker skill-icon container-icon"></i> Docker / Kubernetes</div>
+                <div class="skill-item"><i class="fa-solid fa-chart-line skill-icon ops"></i> Splunk / CI/CD</div>
+                <div class="skill-item"><i class="fa-solid fa-database skill-icon db"></i> Oracle SQL / optimization</div>
               </div>
             </div>
           </div>
+
           <div class="about-stats-bento">
             <div class="bento-box">
-              <span class="bento-number count-up" data-count="28">0</span>
+              <span class="bento-number count-up" data-count="27">0</span>
               <span class="bento-label">Repositories</span>
             </div>
             <div class="bento-box">
-              <span class="bento-number">C++</span>
-              <span class="bento-label">IoT / Hardware</span>
+              <span class="bento-number">10+</span>
+              <span class="bento-label">Microservices Built</span>
             </div>
             <div class="bento-box long">
-              <span class="bento-number">Swift</span>
-              <span class="bento-label">Mobile Apps</span>
+              <span class="bento-number">90%</span>
+              <span class="bento-label">Deployment Time Reduced</span>
             </div>
             <div class="bento-box long">
-              <span class="bento-number">AI</span>
-              <span class="bento-label">Smart Integrations</span>
+              <span class="bento-number">Scalability</span>
+              <span class="bento-label">&lt;1M Requests / Day</span>
             </div>
           </div>
         </div>
@@ -182,10 +178,8 @@
             <div class="terminal-title">guest@shivamsinghal:~</div>
           </div>
           <div class="terminal-body" id="terminal-history">
-            <div class="terminal-line"><span class="term-prompt">guest@shivam:~$</span> <span
-                class="term-cmd">./start.sh</span></div>
-            <div class="terminal-line output">System initialized. Type <span
-                style="color:var(--accent-primary)">'help'</span> to see available commands.</div>
+            <div class="terminal-line"><span class="term-prompt">guest@shivam:~$</span> <span class="term-cmd">./start.sh</span></div>
+            <div class="terminal-line output">System initialized. Type <span style="color:var(--accent-primary)">'help'</span> to see available commands.</div>
           </div>
           <div class="terminal-input-line">
             <span class="term-prompt">guest@shivam:~$</span>
@@ -204,7 +198,6 @@
         </div>
 
         <div class="exp-wrapper">
-
           <!-- Left: Company Selector Tabs -->
           <div class="exp-tabs">
             <div class="exp-tab active" data-tab="boa">
@@ -219,193 +212,224 @@
               <div class="exp-tab-indicator"></div>
               <div class="exp-tab-content">
                 <span class="exp-tab-company">Incedo Inc.</span>
-                <span class="exp-tab-role">Software Developer Intern</span>
+                <span class="exp-tab-role">Intern</span>
                 <span class="exp-tab-period">Jan – Jun 2023</span>
               </div>
             </div>
           </div>
 
-          <!-- Right: Content Panels -->
+          <!-- Right: Details Panels -->
           <div class="exp-panels">
-
-            <!-- Bank of America Panel -->
+            <!-- Bank of America -->
             <div class="exp-panel active" id="exp-boa">
               <div class="exp-panel-top">
-                <div class="exp-panel-title-block">
-                  <div class="exp-live-badge"><span class="live-dot"></span> Currently Here</div>
-                  <h3 class="exp-panel-role">Software Development<br>Engineer I</h3>
-                  <p class="exp-panel-sub"><i class="fa-solid fa-building-columns"></i> Bank of America &nbsp;·&nbsp; <i
-                      class="fa-solid fa-location-dot"></i> Hyderabad, India &nbsp;·&nbsp; <i
-                      class="fa-regular fa-calendar"></i> Jul 2023 – Present</p>
+                <div class="exp-live-badge">
+                  <span class="live-dot"></span> Full-Time
+                </div>
+                <h3 class="exp-panel-role">Software Development Engineer I</h3>
+                <div class="exp-panel-sub">
+                  <span><i class="fa-solid fa-building"></i> Bank of America</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
+                  <span><i class="fa-solid fa-calendar-days"></i> Jul 2023 – Present</span>
                 </div>
               </div>
 
-              <!-- Impact Metrics -->
+              <!-- Metrics Summary Grid -->
               <div class="exp-metrics">
+                <div class="exp-metric">
+                  <span class="exp-metric-val">10<span class="exp-metric-unit">+</span></span>
+                  <span class="exp-metric-label">Microservices Built</span>
+                </div>
+                <div class="exp-metric">
+                  <span class="exp-metric-val">90<span class="exp-metric-unit">%</span></span>
+                  <span class="exp-metric-label">Faster Deployments</span>
+                </div>
                 <div class="exp-metric">
                   <span class="exp-metric-val">60<span class="exp-metric-unit">%</span></span>
-                  <span class="exp-metric-label">SQL Latency Reduction</span>
+                  <span class="exp-metric-label">Query Latency &darr;</span>
                 </div>
                 <div class="exp-metric">
-                  <span class="exp-metric-val">80<span class="exp-metric-unit">%</span></span>
-                  <span class="exp-metric-label">Ops Overhead Eliminated</span>
-                </div>
-                <div class="exp-metric">
-                  <span class="exp-metric-val">$50K<span class="exp-metric-unit">+</span></span>
-                  <span class="exp-metric-label">Revenue Protected</span>
-                </div>
-                <div class="exp-metric">
-                  <span class="exp-metric-val">85<span class="exp-metric-unit">%</span></span>
-                  <span class="exp-metric-label">Incident Recurrence Down</span>
+                  <span class="exp-metric-val">40<span class="exp-metric-unit">%</span></span>
+                  <span class="exp-metric-label">MTTD Improvement</span>
                 </div>
               </div>
 
-              <!-- Bullets -->
+              <!-- Bullet points -->
               <ul class="exp-bullets">
-                <li>Architected and deployed <strong>10+ Spring Boot microservices</strong>, reducing deployment lead
-                  time by <span class="hl">15%</span> and eliminating incidents (down <span class="hl">12%</span>).</li>
-                <li>Containerized legacy AutoSys batch jobs to <strong>OpenShift</strong>, removing <span
-                    class="hl">100%</span> of manual interventions & cutting overhead by <span class="hl">~80%</span>.
-                </li>
-                <li>Optimized Oracle SQL via execution plan analysis, cutting avg latency by <span class="hl">60%</span>
-                  for <span class="hl">5K+</span> daily users.</li>
-                <li>Prevented <span class="hl">$50K+</span> in lost transaction throughput by eliminating slow-query
-                  incidents.</li>
-                <li>Built <strong>Splunk alerting strategy</strong> improving MTTD & MTTR each by <span
-                    class="hl">~40%</span>.</li>
-                <li>Resolved <span class="hl">20+</span> SEV1/SEV2 incidents; post-incident process cut recurrence by
-                  <span class="hl">85%</span>.
-                </li>
-                <li>Remediated <span class="hl">50+</span> CVEs across dependencies; passed external security audit with
-                  <span class="hl">zero findings</span>.
-                </li>
-                <li>Migrated <span class="hl">6+</span> Spring MVC apps to Spring Boot + Docker, reducing maintenance by
-                  <span class="hl">~45%</span>.
-                </li>
+                <li><span class="hl">Microservices Architecture:</span> Architected and deployed 10+ Spring Boot microservices, reducing deployment lead time from 4 hours to 40 minutes. Implemented containerized OpenShift pipelines with automated health checks.</li>
+                <li><span class="hl">Legacy Modernization:</span> Migrated 6 legacy Spring MVC monoliths to Spring Boot + Docker microservices, reducing maintenance overhead by 45% and eliminating manual interventions.</li>
+                <li><span class="hl">Database Optimization:</span> Optimized critical Oracle SQL queries through plan execution analysis and index restructure, reducing latency from 800ms to 320ms for fast dashboard loads.</li>
+                <li><span class="hl">Observability & Response:</span> Designed Splunk alerting frameworks raising anomaly detections by 40% and MTTR by 35%. Resolved 20+ critical incident productions successfully.</li>
+                <li><span class="hl">Infrastructure Automation:</span> Containerized legacy AutoSys batch scheduling to OpenShift cutting overheads by 80% with self-healing releases.</li>
+                <li><span class="hl">Security compliance:</span> Remediated 50+ CVE vulnerabilities in Spring Boot dependencies and pipeline streams.</li>
               </ul>
 
               <div class="exp-tech-stack">
-                <span>Spring Boot</span><span>OpenShift</span><span>Oracle
-                  SQL</span><span>Splunk</span><span>Docker</span><span>Microservices</span><span>Java</span><span>CI/CD</span>
+                <span>Spring Boot</span><span>Java</span><span>Docker</span><span>OpenShift</span><span>Kubernetes</span><span>Oracle SQL</span><span>Splunk</span><span>CI/CD</span>
               </div>
             </div>
 
-            <!-- Incedo Panel -->
+            <!-- Incedo Inc -->
             <div class="exp-panel" id="exp-incedo">
               <div class="exp-panel-top">
-                <div class="exp-panel-title-block">
-                  <div class="exp-intern-badge"><i class="fa-solid fa-graduation-cap"></i> Internship</div>
-                  <h3 class="exp-panel-role">Software<br>Developer Intern</h3>
-                  <p class="exp-panel-sub"><i class="fa-solid fa-building"></i> Incedo Inc. &nbsp;·&nbsp; <i
-                      class="fa-solid fa-location-dot"></i> Gurugram, India &nbsp;·&nbsp; <i
-                      class="fa-regular fa-calendar"></i> Jan – Jun 2023</p>
+                <div class="exp-intern-badge">
+                  <i class="fa-solid fa-graduation-cap"></i> Intern
+                </div>
+                <h3 class="exp-panel-role">Software Developer Intern</h3>
+                <div class="exp-panel-sub">
+                  <span><i class="fa-solid fa-building"></i> Incedo Inc.</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Gurugram, India</span>
+                  <span><i class="fa-solid fa-calendar-days"></i> Jan – Jun 2023</span>
                 </div>
               </div>
 
-              <!-- Impact Metrics -->
+              <!-- Metrics Grid -->
               <div class="exp-metrics">
                 <div class="exp-metric">
-                  <span class="exp-metric-val">8<span class="exp-metric-unit">+</span></span>
-                  <span class="exp-metric-label">APIs Shipped</span>
-                </div>
-                <div class="exp-metric">
-                  <span class="exp-metric-val">100<span class="exp-metric-unit">%</span></span>
-                  <span class="exp-metric-label">Test Coverage</span>
-                </div>
-                <div class="exp-metric">
                   <span class="exp-metric-val">82<span class="exp-metric-unit">%</span></span>
-                  <span class="exp-metric-label">Deploy Time Slashed</span>
+                  <span class="exp-metric-label">Deploy Cycle Speedup</span>
                 </div>
                 <div class="exp-metric">
-                  <span class="exp-metric-val">50K<span class="exp-metric-unit">+</span></span>
-                  <span class="exp-metric-label">Daily Data Points</span>
+                  <span class="exp-metric-val">10<span class="exp-metric-unit">d</span></span>
+                  <span class="exp-metric-label">Reduced Release Cycles</span>
+                </div>
+                <div class="exp-metric">
+                  <span class="exp-metric-val">&lt;2<span class="exp-metric-unit">s</span></span>
+                  <span class="exp-metric-label">Data Viz Latency</span>
                 </div>
               </div>
 
-              <!-- Bullets -->
               <ul class="exp-bullets">
-                <li>Built <span class="hl">8 backend APIs</span> with ASP.NET Core for a portfolio management platform —
-                  <span class="hl">100%</span> test coverage, release cycles cut from 14 → <span class="hl">10
-                    days</span>.
-                </li>
-                <li>Engineered fully automated <strong>CI/CD pipeline</strong> via GitHub Actions — deploy cycle slashed
-                  from <span class="hl">45 min → 8 min</span> (<span class="hl">82%</span> faster).</li>
-                <li>Built real-time financial dashboards with <strong>Dash + Plotly</strong> processing <span
-                    class="hl">50K+</span> daily data points at <span class="hl">&lt;2s</span> latency.</li>
+                <li><span class="hl">Backend API Development:</span> Built 8 backend APIs with ASP.NET Core for portfolio management platform with 100% test coverage. Reduced release cycles from 14 days to 10 days.</li>
+                <li><span class="hl">CI/CD Automation:</span> Engineered automated CI/CD pipeline via GitHub Actions, reducing deploy cycle from 45 min to 8 min (82% faster).</li>
+                <li><span class="hl">Data Visualization:</span> Built real-time financial dashboards with Dash + Plotly processing 50K+ daily data points at low latencies.</li>
               </ul>
 
               <div class="exp-tech-stack">
-                <span>ASP.NET Core</span><span>GitHub
-                  Actions</span><span>Dash</span><span>Plotly</span><span>CI/CD</span><span>Python</span>
+                <span>ASP.NET Core</span><span>GitHub Actions</span><span>Python</span><span>Dash</span><span>Plotly</span><span>CI/CD</span>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-
     <section id="projects" class="section projects-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title"><span class="number">03.</span> Selected Works</h2>
+          <h2 class="section-title"><span class="number">03.</span> Projects</h2>
           <div class="title-line"></div>
         </div>
 
         <div class="projects-list">
           <!-- Project 1 -->
-          <div class="project-card" id="ai-interview-prep" data-tilt>
+          <div class="project-card" data-tilt>
             <div class="project-content">
-              <span class="project-tag">TypeScript / AI</span>
+              <span class="project-tag">System Architecture / AI</span>
               <h3 class="project-card-title">AI Interview Prep Platform</h3>
-              <p class="project-card-desc">An interactive prep dashboard with real-time analytics designed with
-                intelligent problem feeds for robust interview simulation environments.</p>
+              <p class="project-card-desc">Engineered a real-time interviewer matching system with Next.js + Supabase + WebRTC for P2P video feeds and Claude AI integration as 'Friday' mentor for real-time complexity analysis. Supports live sandbox execution of JS, Java, Python, C++.</p>
+              
               <div class="project-tech">
-                <span>Next.js</span><span>Supabase</span><span>AI Integration</span>
+                <span>Next.js</span>
+                <span>Supabase</span>
+                <span>WebRTC</span>
+                <span>Claude API</span>
+                <span>TypeScript</span>
               </div>
+              
               <div class="project-links">
-                <a href="https://github.com/shivam24-2000/AI-Powered-Coding-Interview-Preparation-Platform-with-Real-Time-Code-Analysis"
-                  target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Source</a>
+                <a href="https://github.com/shivam24-2000/AI-Powered-Coding-Interview-Preparation-Platform-with-Real-Time-Code-Analysis" target="_blank">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
-
+            <div class="project-mockup mac-mockup">
+              <div class="mockup-header"><i></i><i></i><i></i></div>
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="AI Interview Platform dashboard view">
+            </div>
           </div>
 
           <!-- Project 2 -->
           <div class="project-card" data-tilt>
             <div class="project-content">
-              <span class="project-tag">Swift / iOS</span>
-              <h3 class="project-card-title">Trekr</h3>
-              <p class="project-card-desc">Intuitive, responsive travel tracking interface building robust location
-                rendering buffers in pure native rendering stacks.</p>
+              <span class="project-tag">Swift / native iOS</span>
+              <h3 class="project-card-title">Trekr | Travel Tracking</h3>
+              <p class="project-card-desc">Native iOS travel companion app with GPS tracking, offline-first syncing to Supabase, custom MapKit tile caching for low energy footprint (&lt;5% battery drain). Handles conflict-free syncing of 1000+ coordinates.</p>
+              
               <div class="project-tech">
-                <span>Swift</span><span>SwiftUI</span><span>Maps API</span>
+                <span>Swift</span>
+                <span>SwiftUI</span>
+                <span>CoreLocation</span>
+                <span>MapKit</span>
+                <span>Supabase</span>
               </div>
+
               <div class="project-links">
-                <a href="https://github.com/shivam24-2000/Trekr" target="_blank" class="project-link"><i
-                    class="fa-brands fa-github"></i> Source</a>
+                <a href="https://github.com/shivam24-2000/Trekr" target="_blank">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
-
+            <div class="project-mockup ios-mockup">
+              <div class="mockup-notch"></div>
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=300&q=80" alt="Trekr iOS Application Interface on Phone">
+            </div>
           </div>
 
           <!-- Project 3 -->
           <div class="project-card" data-tilt>
             <div class="project-content">
-              <span class="project-tag">C++ / IoT</span>
+              <span class="project-tag">IoT / Firmware</span>
               <h3 class="project-card-title">Weather Monitoring Station</h3>
-              <p class="project-card-desc">Highly optimized sensory computation interface engineered using continuous
-                feed sensors to buffer and parse environmental signals accurately.</p>
+              <p class="project-card-desc">C++ Arduino IoT system aggregating MQTT updates batch publishing buffers to reduce bandwidth & extend battery life to 7 days. Designed edge analytics streaming to cloud dashboards at &lt;2s latency with minimal RAM footprint.</p>
+              
               <div class="project-tech">
-                <span>C++</span><span>Arduino</span><span>Sensors</span>
+                <span>C++</span>
+                <span>Arduino</span>
+                <span>MQTT</span>
+                <span>ESP8266</span>
+                <span>IoT</span>
               </div>
+
               <div class="project-links">
-                <a href="https://github.com/shivam24-2000/Weather-Montoring-Station" target="_blank"
-                  class="project-link"><i class="fa-brands fa-github"></i> Source</a>
+                <a href="https://github.com/shivam24-2000/Weather-Montoring-Station" target="_blank">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
+            <div class="project-mockup mac-mockup">
+              <div class="mockup-header"><i></i><i></i><i></i></div>
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Custom IoT Dashboard layout graphs">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open to Work Section -->
+    <section id="open-to-work" class="section open-to-work-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span class="number">04.</span> Open to Work</h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="contact-box" style="border: 1px solid rgba(76, 175, 80, 0.2); max-width: 800px; padding: 40px; text-align: left; background: rgba(76, 175, 80, 0.03);">
+          <h3 style="color: #4caf50; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; margin-bottom: 15px;">🚀 Actively Seeking Backend/Platform Engineering Roles</h3>
+          <p style="color: var(--text-muted); margin-bottom:-5px;">I'm looking for opportunities to own the full service lifecycle: architecture &rarr; deployment &rarr; operations. I'm drawn to roles where I can build scalable systems and modernize legacy infrastructure.</p>
+          
+          <div class="open-work-grid">
+                <div class="bento-box" style="align-items: flex-start; padding: 20px; animation: none; height: auto;">
+                    <div style="color: #4caf50; font-weight: 600; font-size: 0.9rem;">Role Level</div>
+                    <div style="color: var(--text-main); margin-top: 5px; font-size: 0.95rem;">SDE-II / Senior Backend/Platform Engineer</div>
+                </div>
+                <div class="bento-box" style="align-items: flex-start; padding: 20px; animation: none; height: auto;">
+                    <div style="color: #4caf50; font-weight: 600; font-size: 0.9rem;">Role Focus</div>
+                    <div style="color: var(--text-main); margin-top: 5px; font-size: 0.95rem;">Microservices · Distributed systems · DevOps</div>
+                </div>
+                <div class="bento-box" style="align-items: flex-start; padding: 20px; animation: none; height: auto;">
+                    <div style="color: #4caf50; font-weight: 600; font-size: 0.9rem;">Location</div>
+                    <div style="color: var(--text-main); margin-top: 5px; font-size: 0.95rem;">Hyderabad (hybrid/on-site), Remote, Relocation OK</div>
+                </div>
+                <div class="bento-box" style="align-items: flex-start; padding: 20px; animation: none; height: auto;">
+                    <div style="color: #4caf50; font-weight: 600; font-size: 0.9rem;">What I Bring</div>
+                    <div style="color: var(--text-main); margin-top: 5px; font-size: 0.95rem;">2.7+ years FAANG/banking, system design expertise</div>
+                </div>
           </div>
         </div>
       </div>
@@ -414,19 +438,16 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
       <div class="container">
-        <div class="glass-container contact-box">
-          <h2 class="contact-title">Let’s Connect</h2>
-          <p class="contact-desc">Let’s build together! Ready to bring top-tier performance to your development
-            workflows. I am currently open
-            to exciting distributed engineering opportunities.</p>
+        <div class="contact-box">
+          <h2 class="contact-title">Let's Connect</h2>
+          <p class="contact-desc">Ready to discuss how I can help scale your backend infrastructure or modernize your legacy systems? Feel free to reach out.</p>
+          
           <div class="contact-methods">
-            <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-primary btn-glow">Get In Touch</a>
+            <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-primary btn-glow">Get In Touch <i class="fa-solid fa-envelope"></i></a>
+            
             <div class="social-links">
-              <a href="https://www.linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="social-icon"><i
-                  class="fa-brands fa-linkedin"></i></a>
-              <a href="https://github.com/shivam24-2000" target="_blank" class="social-icon"><i
-                  class="fa-brands fa-github"></i></a>
-              <a href="mailto:shivamsinghal24@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://github.com/shivam24-2000" class="social-icon" target="_blank"><i class="fa-brands fa-github"></i></a>
+              <a href="https://linkedin.com/in/shivam-singhal-538369191/" class="social-icon" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
           </div>
         </div>
@@ -434,93 +455,81 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="footer-logo"><span class="logo-txt">S</span><span class="logo-dot">.</span></div>
-        <p class="footer-tagline">Building fast, clean &amp; scalable systems.</p>
+      <div>
+        <div class="footer-logo">Shivam<span class="logo-dot">.</span></div>
+        <p class="footer-tagline">Building fast, clean & scalable systems.</p>
       </div>
-      <nav class="footer-nav">
+      <div class="footer-nav">
         <a href="#hero">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      </div>
       <div class="footer-social">
-        <a href="https://github.com/shivam24-2000" target="_blank" aria-label="GitHub"><i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/shivam-singhal-538369191/" target="_blank" aria-label="LinkedIn"><i
-            class="fa-brands fa-linkedin"></i></a>
-        <a href="mailto:shivamsinghal24@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/shivam24-2000" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>Designed &amp; Built by <span class="footer-name">Shivam Singhal</span> &nbsp;·&nbsp; &copy; 2026</span>
+      &copy; 2026 Developed by <span class="footer-name">Shivam Singhal</span>. All rights reserved.
     </div>
   </footer>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-  <!-- What I'm Building Modal -->
+  <!-- Preview Modal for What I'm building now -->
   <div class="preview-modal" id="previewModal">
     <div class="modal-overlay" id="modalOverlay"></div>
     <div class="modal-content creative-modal">
-      <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
-
+      <button class="modal-close" id="modalClose">&times;</button>
+      
       <div class="modal-split">
-        <!-- Left: Code Mockup -->
-        <div class="modal-code-mockup project-mockup">
-          <div class="mockup-header">
-            <i></i><i></i><i></i>
-            <span class="mockup-title">ai-mentor.ts</span>
+        <!-- Left: Code Mockup Dashboard -->
+        <div class="modal-code-mockup">
+          <div class="terminal-header" style="background:#0b0c10; padding:12px 20px;">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title" style="margin-right:0;">AI Interview Session</div>
           </div>
+          
           <div class="mockup-body">
-            <div class="code-line"><span class="c-keyword">async function</span> <span
-                class="c-func">analyzeComplexity</span>(code) {</div>
-            <div class="code-line indent"> <span class="c-comment">// Friday AI actively monitoring...</span></div>
-            <div class="code-line indent"> <span class="c-keyword">const</span> ast = parser.parse(code);</div>
-            <div class="code-line indent"> <span class="c-keyword">return</span> {</div>
-            <div class="code-line indent-2"> time: <span class="c-string">"O(N log N)"</span>,</div>
-            <div class="code-line indent-2"> space: <span class="c-string">"O(1)"</span>,</div>
-            <div class="code-line indent-2"> feedback: <span class="c-string">"Optimize sort logic"</span></div>
-            <div class="code-line indent"> };</div>
-            <div class="code-line">}</div>
+            <div class="code-line"><span class="c-keyword">const</span> AI = <span class="c-keyword">new</span> <span class="c-func">Matchmaker</span>({</div>
+            <div class="code-line indent">skills: <span class="c-string">["Java", "System Design"]</span>,</div>
+            <div class="code-line indent">timeout: <span class="c-string">"30s"</span></div>
+            <div class="code-line">});</div>
+            <div class="code-line">AI.<span class="c-func">startMatching</span>()</div>
+            <div class="code-line indent">.<span class="c-func">then</span>(session => {</div>
+            <div class="code-line indent-2">console.<span class="c-func">log</span>(<span class="c-string">"Mentor 'Friday' Connected"</span>);</div>
+            <div class="code-line indent">});</div>
             <div class="ai-typing-indicator"><span></span><span></span><span></span></div>
           </div>
         </div>
 
-        <!-- Right: Info -->
-        <div class="modal-info">
+        <!-- Right: Detail Info Panel -->
+        <div class="modal-info" style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
           <div class="modal-badge"><i class="fa-solid fa-microchip"></i> Next.js / Supabase / WebRTC</div>
           <h2 class="modal-title">AI Interview Prep</h2>
-          <p class="modal-tagline">An interactive dashboard engineered with robust AI-driven interview simulation
-            environments.</p>
+          <div class="modal-tagline">An interactive dashboard engineered with robust AI-driven interview simulation environments.</div>
 
           <ul class="creative-features">
             <li><i class="fa-solid fa-brain"></i>
-              <div><strong>Real-Time AI Mentor</strong><span>Instant time/space feedback with dual-model
-                  failover.</span></div>
+              <div><strong>Real-Time AI Mentor</strong><span>Instant time/space feedback with dual-model failover.</span></div>
             </li>
             <li><i class="fa-solid fa-terminal"></i>
-              <div><strong>Virtual Execution</strong><span>Run JS, Java, Python, C++ via remote engine execution.</span>
-              </div>
+              <div><strong>Virtual Execution</strong><span>Run JS, Java, Python, C++ via remote engine execution.</span></div>
             </li>
             <li><i class="fa-solid fa-microphone"></i>
-              <div><strong>Voice Assistant</strong><span>Talk to "Friday" natively via WebRTC dictation flows.</span>
-              </div>
+              <div><strong>Voice Assistance</strong><span>Talk to "Friday" natively via WebRTC dictation flows.</span></div>
             </li>
             <li><i class="fa-solid fa-users"></i>
-              <div><strong>P2P Mock Interviews</strong><span>Live video socket feeds powered by Supabase
-                  channels.</span></div>
+              <div><strong>P2P Mock Interviews</strong><span>Live video socket feeds powered by Supabase channels.</span></div>
             </li>
           </ul>
 
-          <a href="https://github.com/shivam24-2000/AI-Powered-Coding-Interview-Preparation-Platform-with-Real-Time-Code-Analysis"
-            target="_blank" class="btn btn-primary modal-action-btn">
-            View Live Repository <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/shivam24-2000/AI-Powered-Coding-Interview-Preparation-Platform-with-Real-Time-Code-Analysis" target="_blank" class="btn btn-primary modal-action-btn" style="margin-top:20px; text-align:center; justify-content:center;">
+            View Repository <i class="fa-brands fa-github"></i>
           </a>
         </div>
       </div>
@@ -529,5 +538,4 @@
 
   <script type="module" src="/src/main.js"></script>
 </body>
-
 </html>
