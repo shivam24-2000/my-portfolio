@@ -34,6 +34,11 @@
 </head>
 
 <body>
+  <!-- Ambient Background Motion Layers -->
+  <div class="bg-ambient-layer">
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+  </div>
   <!-- Boot-up Preloader -->
   <div id="preloader">
     <div id="boot-terminal"></div>
@@ -55,26 +60,16 @@
   <nav class="navbar" id="navbar">
     <div class="logo">S<span class="logo-dot">.</span></div>
 
-    <div class="nav-links" id="nav-links">
+    <nav class="nav-links">
       <a href="#hero" class="nav-item active">Home</a>
       <a href="#about" class="nav-item">About</a>
       <a href="#experience" class="nav-item">Experience</a>
       <a href="#projects" class="nav-item">Projects</a>
-      <a href="#open-to-work" class="nav-item">Open to Work</a>
       <a href="#contact" class="nav-item">Contact</a>
-    </div>
+    </nav>
 
     <div class="nav-cta">
       <!-- Theme Toggle -->
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-        <div class="toggle-track">
-          <div class="toggle-icon sun"><i class="fa-solid fa-sun"></i></div>
-          <div class="toggle-icon moon"><i class="fa-solid fa-moon"></i></div>
-          <div class="toggle-ball"></div>
-        </div>
-      </button>
-
-      <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-primary">Hire Me</a>
 
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -85,48 +80,62 @@
   <main id="app">
     <!-- Hero Section -->
     <section id="hero" class="section hero-section">
-      <div class="container">
-        <div class="hero-open-badge"><span class="open-dot"></span> Open to Work</div>
-        <p class="hero-sub">Hi, my name is</p>
-        <h1 class="hero-title">Shivam Singhal<span class="accent-dot">.</span></h1>
-        <h2 class="hero-subtitle"><span id="typewriter"></span><span class="type-cursor">|</span></h2>
+      <div class="hero-layout">
+        <!-- Left: Text Content -->
+        <div class="container hero-text-col">
+          <div class="hero-open-badge"><span class="open-dot"></span> Open to Work</div>
+          <p class="hero-sub">Hi, my name is</p>
+          <h1 class="hero-title">Shivam Singhal<span class="accent-dot">.</span></h1>
+          <h2 class="hero-subtitle"><span id="typewriter"></span><span class="type-cursor">|</span></h2>
 
-        <p class="hero-desc">I build scalable microservice architectures and modernize legacy systems. At Bank of
-          America, I architect distributed systems serving &lt;1M requests/day while reducing deployment time by 90% and
-          operational overhead by 80%.</p>
+          <p class="hero-desc">I build scalable microservice architectures and modernize legacy systems. At Bank of
+            America, I architect distributed systems serving &lt;1M requests/day while reducing deployment time by 90%
+            and
+            operational overhead by 80%.</p>
 
-        <p class="hero-desc" style="font-size: 1rem; color: var(--text-dark); margin-top: -15px; margin-bottom: 20px;">I
-          specialize in: System design · High-scale optimization · DevOps modernization · Operational reliability</p>
+          <p class="hero-desc"
+            style="font-size: 1rem; color: var(--text-dark); margin-top: -15px; margin-bottom: 20px;">I
+            specialize in: System design · High-scale optimization · DevOps modernization · Operational reliability</p>
 
-        <div class="project-tech" style="margin-bottom: 30px;">
-          <span>Spring Boot</span>
-          <span>Microservices</span>
-          <span>Docker/OpenShift</span>
-          <span>Oracle SQL</span>
-          <span>Kubernetes</span>
-          <span>CI/CD</span>
-          <span>Splunk/Observability</span>
-          <span>TypeScript</span>
-          <span>Swift/iOS</span>
-        </div>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
-          <a href="https://github.com/shivam24-2000" target="_blank" class="btn btn-secondary"><i
-              class="fa-brands fa-github"></i> GitHub</a>
-          <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="btn btn-secondary"><i
-              class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        </div>
-
-        <!-- What I'm Building Now Widget -->
-        <a href="javascript:void(0)" id="building-modal-trigger" class="building-widget">
-          <div class="building-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-          <div class="building-text">
-            <span class="building-label">What I'm building now</span>
-            <span class="building-title">AI Interview Prep Platform</span>
+          <div class="project-tech" style="margin-bottom: 30px;">
+            <span>Spring Boot</span>
+            <span>Microservices</span>
+            <span>Docker/OpenShift</span>
+            <span>Oracle SQL</span>
+            <span>Kubernetes</span>
+            <span>CI/CD</span>
+            <span>Splunk/Observability</span>
+            <span>TypeScript</span>
+            <span>Swift/iOS</span>
           </div>
-          <i class="fa-solid fa-arrow-right building-arrow"></i>
-        </a>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://github.com/shivam24-2000" target="_blank" class="btn btn-secondary"><i
+                class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="btn btn-secondary"><i
+                class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </div>
+
+          <!-- What I'm Building Now Widget -->
+          <a href="javascript:void(0)" id="building-modal-trigger" class="building-widget">
+            <div class="building-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <div class="building-text">
+              <span class="building-label">What I'm building now</span>
+              <span class="building-title">AI Interview Prep Platform</span>
+            </div>
+            <i class="fa-solid fa-arrow-right building-arrow"></i>
+          </a>
+        </div>
+
+        <!-- Right: 3D Globe -->
+        <div class="hero-3d-col">
+          <div id="hero-globe-canvas" class="hero-globe-wrap">
+            <div class="globe-badge globe-badge-1"><i class="fa-solid fa-bolt"></i> Spring Boot</div>
+            <div class="globe-badge globe-badge-2"><i class="fa-brands fa-docker"></i> Docker</div>
+            <div class="globe-badge globe-badge-3"><i class="fa-solid fa-microchip"></i> Distributed Systems</div>
+          </div>
+        </div>
       </div>
 
       <div class="scroll-indicator">
@@ -141,9 +150,10 @@
     <section id="about" class="section about-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title"><span class="number">01.</span> About Me</h2>
+          <h2 class="section-title"><span class="number">01.</span> The Mission: Scaling Resilience</h2>
           <div class="title-line"></div>
         </div>
+        <p class="section-hook">I bridge the gap between <b>complex architecture</b> and <b>seamless user experiences</b>, focusing on systems that move at the <b>speed of thought</b>.</p>
 
         <div class="about-grid">
           <div class="about-text">
@@ -186,6 +196,7 @@
           </div>
         </div>
 
+
         <!-- Terminal Easter Egg -->
         <div class="terminal-container" data-tilt>
           <div class="terminal-header">
@@ -210,9 +221,10 @@
     <section id="experience" class="section experience-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title"><span class="number">02.</span> Experience</h2>
+          <h2 class="section-title"><span class="number">02.</span> The Journey: Professional Growth</h2>
           <div class="title-line"></div>
         </div>
+        <p class="section-hook">From <b>high-stakes banking</b> platforms to <b>rapid internal tooling</b>, here's where I've turned <b>architectural theory</b> into <b>enterprise reality</b>.</p>
 
         <div class="exp-wrapper">
           <!-- Left: Company Selector Tabs -->
@@ -352,9 +364,10 @@
     <section id="projects" class="section projects-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title"><span class="number">03.</span> Projects</h2>
+          <h2 class="section-title"><span class="number">03.</span> The Experiments: Engineering Impact</h2>
           <div class="title-line"></div>
         </div>
+        <p class="section-hook">Breaking boundaries with <b>AI integration</b>, <b>real-time networking</b>, and <b>high-performance</b> system design.</p>
 
         <div class="projects-list">
           <!-- Project 1 -->
@@ -491,6 +504,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
+      <div id="contact-canvas" class="section-3d-bg"></div>
       <div class="container">
         <div class="contact-box">
           <h2 class="contact-title">Let's Connect</h2>

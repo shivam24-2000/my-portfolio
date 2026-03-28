@@ -212,6 +212,52 @@ body {
   color: var(--text-main);
   overflow-x: hidden;
   line-height: 1.6;
+  position: relative;
+}
+
+/* --- Ambient Background Motions --- */
+.bg-ambient-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  pointer-events: none;
+}
+
+/* 1. Digital Grid */
+.bg-grid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image:
+    linear-gradient(rgba(129, 140, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(129, 140, 248, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg);
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    transform: perspective(500px) rotateX(60deg) translateY(0);
+  }
+
+  100% {
+    transform: perspective(500px) rotateX(60deg) translateY(50px);
+  }
+}
+
+/* 2. Noise Texture overlay */
+.bg-noise {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 /* Custom Scrollbar */
@@ -239,7 +285,7 @@ body {
   filter: blur(120px);
   z-index: -2;
   opacity: var(--orb-opacity, 0.4);
-  animation: float 25s infinite alternate ease-in-out;
+  transition: transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .orb-1 {
@@ -2342,5 +2388,665 @@ body {
 
   .exp-panel-role {
     font-size: 1.5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3D SCENES — Hero Globe + Skills Orbit
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Hero: split layout ──────────────────────────────────────────────────── */
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+}
+
+.hero-text-col {
+  /* override container auto-margin so it sits flush in the grid */
+  margin: 0;
+  margin-left: auto;
+  padding-right: 3rem;
+  max-width: 640px;
+}
+
+.hero-3d-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+}
+
+/* ── Globe canvas wrapper ────────────────────────────────────────────────── */
+.hero-globe-wrap {
+  width: 100%;
+  height: 100%;
+  max-width: 560px;
+  max-height: 560px;
+  position: relative;
+  cursor: grab;
+  border-radius: 50%;
+}
+
+.hero-globe-wrap:active {
+  cursor: grabbing;
+}
+
+/* The three.js canvas itself */
+.hero-globe-wrap canvas {
+  border-radius: 50%;
+  filter: drop-shadow(0 0 60px rgba(138, 43, 226, 0.35));
+}
+
+/* ── Floating info badges around the globe ───────────────────────────────── */
+.globe-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(6, 9, 14, 0.75);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  backdrop-filter: blur(12px);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.globe-badge i {
+  color: var(--accent-primary);
+}
+
+.globe-badge-1 {
+  top: 18%;
+  right: -8%;
+  animation: badge-float 4s ease-in-out infinite;
+}
+
+.globe-badge-2 {
+  bottom: 28%;
+  right: -12%;
+  animation: badge-float 5s ease-in-out infinite 0.8s;
+}
+
+.globe-badge-3 {
+  bottom: 16%;
+  left: -5%;
+  animation: badge-float 4.5s ease-in-out infinite 1.6s;
+}
+
+@keyframes badge-float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ── Skills Orbit section (in About) ────────────────────────────────────── */
+.skills-orbit-section {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.skills-orbit-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skills-orbit-wrap {
+  width: 100%;
+  height: 420px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  background: rgba(6, 9, 14, 0.4);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  cursor: grab;
+  position: relative;
+}
+
+.skills-orbit-wrap:active {
+  cursor: grabbing;
+}
+
+.skills-orbit-wrap canvas {
+  display: block;
+}
+
+/* Subtle gradient fade at the edges of the orbit canvas */
+.skills-orbit-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at center, transparent 60%, var(--bg-primary) 100%);
+  pointer-events: none;
+}
+
+/* ── Light mode overrides ────────────────────────────────────────────────── */
+[data-theme="light"] .globe-badge {
+  background: rgba(248, 250, 252, 0.85);
+  border-color: rgba(124, 58, 237, 0.25);
+}
+
+[data-theme="light"] .skills-orbit-wrap {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+[data-theme="light"] .skills-orbit-wrap::after {
+  background: radial-gradient(ellipse at center, transparent 60%, var(--bg-primary) 100%);
+}
+
+/* ── Responsive breakpoints ─────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .hero-globe-wrap {
+    max-width: 460px;
+    max-height: 460px;
+  }
+
+  .globe-badge-1 {
+    right: -2%;
+  }
+
+  .globe-badge-2 {
+    right: -5%;
+  }
+
+  .globe-badge-3 {
+    left: -2%;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    padding-top: var(--nav-height);
+  }
+
+  .hero-text-col {
+    padding-right: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .hero-text-col .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-text-col .building-widget {
+    margin: 30px auto 0;
+  }
+
+  .hero-3d-col {
+    height: 400px;
+  }
+
+  .hero-globe-wrap {
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  .globe-badge-1,
+  .globe-badge-2,
+  .globe-badge-3 {
+    display: none;
+  }
+
+  .skills-orbit-wrap {
+    height: 340px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-3d-col {
+    height: 320px;
+  }
+
+  .hero-globe-wrap {
+    max-width: 280px;
+    max-height: 280px;
+  }
+
+  .skills-orbit-wrap {
+    height: 280px;
+  }
+}
+
+/* ── Immersive 3D Backgrounds ─────────────────────────────────────────── */
+.section-3d-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  filter: blur(1px);
+}
+
+.section {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.section>.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- AR VR Motion HUD Elements --- */
+.ar-hud-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.hud-corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent-primary);
+  opacity: 0.3;
+  transition: all 0.5s ease;
+}
+
+.hud-corner.top-left {
+  top: 40px;
+  left: 40px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.hud-corner.top-right {
+  top: 40px;
+  right: 40px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.hud-corner.bottom-left {
+  bottom: 40px;
+  left: 40px;
+  border-right: none;
+  border-top: none;
+}
+
+.hud-corner.bottom-right {
+  bottom: 40px;
+  right: 40px;
+  border-left: none;
+  border-top: none;
+}
+
+.hud-scanline {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, rgba(129, 140, 248, 0.05), transparent);
+  animation: scanline sweep 8s linear infinite;
+}
+
+@keyframes sweep {
+  0% {
+    top: -10%;
+  }
+
+  100% {
+    top: 110%;
+  }
+}
+
+/* Floating Animation for AR HUD */
+.hero-section:hover .hud-corner {
+  opacity: 0.8;
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 0 10px var(--accent-primary));
+}
+
+/* Digital Glitch for Hero Title */
+.hero-title {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-primary);
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim 2s infinite linear alternate-reverse;
+  opacity: 0;
+}
+
+.hero-section:hover .hero-title::after {
+  opacity: 1;
+}
+
+@keyframes noise-anim {
+  0% {
+    clip: rect(61px, 9999px, 52px, 0);
+  }
+
+  5% {
+    clip: rect(33px, 9999px, 144px, 0);
+  }
+
+  10% {
+    clip: rect(121px, 9999px, 115px, 0);
+  }
+
+  15% {
+    clip: rect(144px, 9999px, 162px, 0);
+  }
+
+  20% {
+    clip: rect(62px, 9999px, 180px, 0);
+  }
+
+  /* ... more clips ... */
+  100% {
+    clip: rect(20px, 9999px, 192px, 0);
+  }
+}
+/* --- Creative Narrative Hooks --- */
+.section-hook {
+  position: relative;
+  max-width: fit-content;
+  color: var(--text-main);
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-top: -10px;
+  margin-bottom: 50px;
+  padding: 12px 24px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: default;
+}
+
+.section-hook:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--accent-secondary);
+  box-shadow: 0 12px 40px 0 rgba(0, 245, 212, 0.15);
+}
+
+.section-hook::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.section-hook:hover::before {
+  left: 100%;
+}
+
+.section-hook:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: var(--accent-secondary);
+  transition: width 0.3s ease;
+}
+
+.section-hook:hover:after {
+  width: 100%;
+}
+
+/* Narrative accent markers within the hooks */
+.section-hook b {
+  color: var(--accent-secondary);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 245, 212, 0.3);
+}
+
+
+/* --- Mobile & Tablet Overrides --- */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 70px;
+  }
+
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--bg-primary);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 1000;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    border-left: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    width: 28px;
+    height: 2px;
+    background: var(--text-main);
+    transition: 0.3s;
+  }
+
+  /* Hamburger Animation */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .about-grid, .projects-grid, .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+  }
+
+  .about-stats-bento {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .bento-box.long {
+    grid-column: span 1;
+  }
+
+  .terminal-container {
+    display: none; /* Hide complex terminal on mobile for better UX */
+  }
+
+  .cursor, .cursor-dot {
+    display: none; /* Custom cursor is clunky on mobile */
+  }
+
+  .section-hook {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .about-stats-bento {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* --- Utility Classes for Responsiveness --- */
+.hide-mobile {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+[data-theme="light"] .nav-links {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex !important; /* Ensure it's never hidden when it's the drawer */
+  }
+  
+  .nav-item {
+    font-size: 1.5rem !important; /* Larger touch targets */
+    color: var(--text-main) !important;
+  }
+  
+  .hero-3d-col {
+    display: none; /* Hide 3D model on small mobile to save vertical space */
+  }
+  
+  .hero-layout {
+    min-height: auto;
+    padding-bottom: 50px;
+  }
+}
+
+/* --- Force Display & Color for Mobile Nav Items --- */
+@media (max-width: 768px) {
+  .nav-links.active {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .nav-links .nav-item {
+    display: block !important;
+    font-size: 2rem !important;
+    color: var(--text-main) !important;
+    margin: 10px 0;
+    opacity: 1 !important;
+    text-align: center;
+    width: 100%;
   }
 }

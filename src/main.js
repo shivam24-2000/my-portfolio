@@ -3,9 +3,17 @@
 // Custom Cursor, Particle Canvas, Scroll Indicators, Project tilt effects Style Transitions
 //
 
+import { 
+    initHeroGlobe, 
+    initFloatingArchitecture 
+} from './three-scene.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 0. --- Boot-up Preloader Sequence ---
+    // ── 3D Scene Initialization ───────────────────────────────────────────────
+    initHeroGlobe('hero-globe-canvas');
+    initFloatingArchitecture('contact-canvas');
+
     const preloader = document.getElementById('preloader');
     const bootTerminal = document.getElementById('boot-terminal');
     if (preloader && bootTerminal) {
@@ -85,6 +93,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 cursor.style.borderColor = 'rgba(255,255,255,0.5)';
                 cursor.style.backgroundColor = 'transparent';
             }
+        });
+    });
+    // Move Orbs with mouse (Ambient Motion)
+    const orbs = document.querySelectorAll('.glow-orb');
+    document.addEventListener('mousemove', (e) => {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.05;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.05;
+        orbs.forEach((orb, index) => {
+            const factor = (index + 1) * 0.4;
+            orb.style.transform = `translate(${moveX * factor}px, ${moveY * factor}px)`;
         });
     });
 
@@ -219,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(sec => observer.observe(sec));
 
-    // 3.5 --- Scroll Progress Bar ---
+    // 5. --- Scroll Progress Bar ---
     const progressBar = document.getElementById('scroll-progress');
     window.addEventListener('scroll', () => {
         if (progressBar) {
@@ -566,4 +584,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+});
+
+// --- Final Mobile Responsiveness & Touch Support ---
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll'); // Prevent scroll when menu open
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    }
+
+    // Disable custom cursor on touch devices for accessibility
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouch) {
+        document.body.classList.add('is-touch');
+        const cursor = document.querySelector('.cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+        if (cursor) cursor.style.display = 'none';
+        if (cursorDot) cursorDot.style.display = 'none';
+    }
 });
