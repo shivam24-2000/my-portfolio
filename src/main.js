@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 9. --- Hacker Text Scramble Effect ---
     const scrambleLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*";
-    const scramblers = document.querySelectorAll('.section-title, .hero-title, .project-card-title, .bento-label, .nav-item, .contact-title');
+    const scramblers = document.querySelectorAll('.section-title, .project-card-title, .bento-label, .nav-item, .contact-title');
     scramblers.forEach(el => {
         // Prevent nesting child scrambling by targeting exact element structure or ignore if empty
         const originalText = el.innerText;
