@@ -2812,11 +2812,11 @@ body {
   .navbar {
     padding: 0 2rem;
   }
-  
+
   .hero-title {
     font-size: 3.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 2.2rem;
   }
@@ -2871,9 +2871,11 @@ body {
   .hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
+
   .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
+
   .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
@@ -2899,7 +2901,9 @@ body {
     padding: 0 10px;
   }
 
-  .about-grid, .projects-grid, .contact-grid {
+  .about-grid,
+  .projects-grid,
+  .contact-grid {
     grid-template-columns: 1fr !important;
     gap: 30px;
   }
@@ -2907,17 +2911,20 @@ body {
   .about-stats-bento {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .bento-box.long {
     grid-column: span 1;
   }
 
   .terminal-container {
-    display: none; /* Hide complex terminal on mobile for better UX */
+    display: none;
+    /* Hide complex terminal on mobile for better UX */
   }
 
-  .cursor, .cursor-dot {
-    display: none; /* Custom cursor is clunky on mobile */
+  .cursor,
+  .cursor-dot {
+    display: none;
+    /* Custom cursor is clunky on mobile */
   }
 
   .section-hook {
@@ -2944,7 +2951,7 @@ body {
     width: 100%;
     text-align: center;
   }
-  
+
   .hero-actions {
     flex-direction: column;
     gap: 15px;
@@ -2972,18 +2979,21 @@ body {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: flex !important; /* Ensure it's never hidden when it's the drawer */
+    display: flex !important;
+    /* Ensure it's never hidden when it's the drawer */
   }
-  
+
   .nav-item {
-    font-size: 1.5rem !important; /* Larger touch targets */
+    font-size: 1.5rem !important;
+    /* Larger touch targets */
     color: var(--text-main) !important;
   }
-  
+
   .hero-3d-col {
-    display: none; /* Hide 3D model on small mobile to save vertical space */
+    display: none;
+    /* Hide 3D model on small mobile to save vertical space */
   }
-  
+
   .hero-layout {
     min-height: auto;
     padding-bottom: 50px;
@@ -2997,7 +3007,7 @@ body {
     opacity: 1 !important;
     visibility: visible !important;
   }
-  
+
   .nav-links .nav-item {
     display: block !important;
     font-size: 2rem !important;

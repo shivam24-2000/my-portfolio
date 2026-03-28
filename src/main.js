@@ -3,9 +3,9 @@
 // Custom Cursor, Particle Canvas, Scroll Indicators, Project tilt effects Style Transitions
 //
 
-import { 
-    initHeroGlobe, 
-    initFloatingArchitecture 
+import {
+    initHeroGlobe,
+    initFloatingArchitecture
 } from './three-scene.js';
 
 document.addEventListener('DOMContentLoaded', () => {

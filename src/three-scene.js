@@ -164,10 +164,10 @@ export function initFloatingArchitecture(containerId) {
     const lightColors = [0x6d28d9, 0x0ea5e9, 0x0284c7];
 
     for (let i = 0; i < 12; i++) {
-        const mat = new THREE.MeshPhongMaterial({ 
-            color: darkColors[i % 3], 
-            emissive: darkColors[i % 3], 
-            emissiveIntensity: 0.2 
+        const mat = new THREE.MeshPhongMaterial({
+            color: darkColors[i % 3],
+            emissive: darkColors[i % 3],
+            emissiveIntensity: 0.2
         });
         const node = new THREE.Mesh(nodeGeo, mat);
         node.position.set((Math.random() - 0.5) * 8, (Math.random() - 0.5) * 5, (Math.random() - 0.5) * 6);
@@ -207,7 +207,7 @@ export function initFloatingArchitecture(containerId) {
             n.mesh.rotation.x += n.rotSpeed;
             n.mesh.rotation.y += n.rotSpeed;
         });
-        
+
         for (let i = 0; i < nodes.length; i++) {
             for (let j = i + 1; j < nodes.length; j++) {
                 if (nodes[i].mesh.position.distanceTo(nodes[j].mesh.position) < 5) {
