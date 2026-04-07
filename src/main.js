@@ -7,12 +7,14 @@ import {
     initHeroGlobe,
     initFloatingArchitecture
 } from './three-scene.js';
+import { initChatbot } from './chatbot.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
     // ── 3D Scene Initialization ───────────────────────────────────────────────
     initHeroGlobe('hero-globe-canvas');
     initFloatingArchitecture('contact-canvas');
+    initChatbot();
 
     const preloader = document.getElementById('preloader');
     const bootTerminal = document.getElementById('boot-terminal');

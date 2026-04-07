@@ -565,6 +565,54 @@
   <!-- Back to Top Button -->
   <button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
+  <!-- ── Friday AI Chatbot Widget ──────────────────────────── -->
+  <button id="chatbot-toggle" aria-label="Open Friday AI assistant">
+    <i class="fa-solid fa-robot cb-toggle-icon cb-icon-open"></i>
+    <i class="fa-solid fa-xmark cb-toggle-icon cb-icon-close"></i>
+    <div id="chatbot-badge">1</div>
+  </button>
+
+  <div id="chatbot-panel" role="dialog" aria-label="Friday AI Chat">
+    <!-- Header -->
+    <div class="cb-header">
+      <div class="cb-header-avatar"><i class="fa-solid fa-robot"></i></div>
+      <div class="cb-header-info">
+        <div class="cb-header-name">Friday <span style="font-weight:400;color:var(--text-muted);font-size:0.8rem;">· AI</span></div>
+        <div class="cb-header-status"><span class="cb-status-dot"></span> Online · Knows Shivam well</div>
+      </div>
+      <button id="chatbot-close" aria-label="Close chat"><i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+
+    <!-- Quick Suggestion Chips -->
+    <div class="cb-chips">
+      <button class="cb-chip">His experience</button>
+      <button class="cb-chip">Projects built</button>
+      <button class="cb-chip">Available to hire?</button>
+      <button class="cb-chip">Tech stack</button>
+      <button class="cb-chip">Contact him</button>
+      <button class="cb-chip">Fun fact</button>
+      <button class="cb-chip">Tell me a joke</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="chatbot-messages"></div>
+
+    <!-- Input -->
+    <div class="cb-footer">
+      <input
+        type="text"
+        id="chatbot-input"
+        placeholder="Ask me about Shivam…"
+        autocomplete="off"
+        spellcheck="false"
+        maxlength="200"
+      />
+      <button id="chatbot-send" aria-label="Send message">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
   <!-- Preview Modal for What I'm building now -->
   <div class="preview-modal" id="previewModal">
     <div class="modal-overlay" id="modalOverlay"></div>
