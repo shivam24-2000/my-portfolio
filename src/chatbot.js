@@ -32,6 +32,15 @@ const KB = {
   responses: [
 
     {
+      id: 'resume',
+      patterns: ['resume', 'cv', 'curriculum vitae', 'download resume', 'get resume', 'see resume', 'view resume'],
+      replies: [
+        `Accessing the secure archives... 📂\n\nI've retrieved Shivam's most recent **Resume**. You can view or download it using the link below:\n\n📄 **[Download Shivam's Resume (PDF)](/resume.pdf)**`,
+        `Searching for professional credentials... Found them! ✅\n\nHere's the latest snapshot of Shivam's career. It's much more formal than I am, but very impressive.\n\n📄 **[View Resume (PDF)](/resume.pdf)**`,
+      ]
+    },
+
+    {
       id: 'ironman',
       patterns: ['iron man', 'tony stark', 'jarvis', 'avengers', 'marvel', 'stark'],
       replies: [
@@ -60,7 +69,7 @@ const KB = {
 
     {
       id: 'experience',
-      patterns: ['experience', 'work history', 'career', 'bank of america', 'boa', 'incedo', 'employment', 'internship', 'worked', 'resume', 'cv', 'job history'],
+      patterns: ['experience', 'work history', 'career', 'bank of america', 'boa', 'incedo', 'employment', 'internship', 'worked', 'job history'],
       replies: [
         `**Professional Record — Loading...** ✅\n\n🏦 **Bank of America** · SDE I · *Jul 2023 – Present*\n→ Built **10+ Spring Boot microservices** from scratch\n→ Slashed deployment time: 4 hrs **→** 40 min (**90% faster**)\n→ SQL query optimization: 800ms **→** 320ms latency\n→ Splunk alerting: **40% better** anomaly detection\n→ Containerized AutoSys batch jobs on OpenShift (**80% overhead cut**)\n→ Remediated 50+ CVE vulnerabilities\n\n🎓 **Incedo Inc.** · Intern · *Jan – Jun 2023*\n→ 8 ASP.NET Core APIs with **100% test coverage**\n→ GitHub Actions CI/CD: 45 min **→** 8 min (**82% faster**)\n→ Real-time dashboards processing **50K+ data points/day**`,
       ]
@@ -225,19 +234,33 @@ function findResponse(userMessage) {
   const msg = userMessage.toLowerCase().trim();
 
   // Greetings — whole-word only (avoids "hi" in "hire")
-  if (KB.greetings.some(g => wordMatch(msg, g))) return pick(KB.greetReplies);
+  if (KB.greetings.some(g => wordMatch(msg, g))) return { reply: pick(KB.greetReplies) };
 
   // Farewells — whole-word only
-  if (KB.farewells.some(f => wordMatch(msg, f))) return pick(KB.farewellReplies);
+  if (KB.farewells.some(f => wordMatch(msg, f))) return { reply: pick(KB.farewellReplies) };
 
   // Knowledge base — first pattern match wins, reply is randomly picked from variants
   for (const block of KB.responses) {
     if (block.patterns.some(p => msg.includes(p))) {
-      return pick(block.replies);
+      return { reply: pick(block.replies), action: block.action || null };
     }
   }
 
-  return pick(KB.fallbacks);
+  return { reply: pick(KB.fallbacks) };
+}
+
+// ── Action Executor ───────────────────────────────────────────────────────────
+function executeAction(action) {
+  if (action === 'open_resume') {
+    // Programmatic download — creates a hidden <a> and clicks it
+    const a = document.createElement('a');
+    a.href     = '/resume.pdf';
+    a.download = 'Shivam_Singhal_Resume.pdf';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
 }
 
 // ── Message Rendering ─────────────────────────────────────────────────────────
@@ -383,7 +406,10 @@ export function initChatbot() {
     const delay = 550 + Math.min(text.length * 8, 900);
     setTimeout(() => {
       typingEl.remove();
-      appendBotMessage(findResponse(text));
+      const { reply, action } = findResponse(text);
+      appendBotMessage(reply);
+      // Execute any side-effect action (e.g. resume download) after message appears
+      if (action) setTimeout(() => executeAction(action), 400);
       input.disabled   = false;
       sendBtn.disabled = false;
       input.focus();

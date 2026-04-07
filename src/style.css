@@ -557,7 +557,57 @@ body {
   gap: 12px;
 }
 
-/* --- Hero Section --- */
+/* Navbar Resume Button */
+.btn-nav-resume {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  background: var(--btn-secondary-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  margin-right: 12px;
+}
+
+[data-theme="light"] .btn-nav-resume {
+  background: var(--btn-secondary-bg);
+  border-color: var(--glass-border);
+  color: var(--text-main);
+}
+
+.btn-nav-resume i {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  color: var(--accent-primary);
+}
+
+.btn-nav-resume:hover {
+  background: var(--btn-secondary-hover);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn-nav-resume:hover i {
+  transform: translateY(2px);
+}
+
+@media (max-width: 768px) {
+  .btn-nav-resume {
+    margin-right: 8px;
+    padding: 10px 12px;
+  }
+  .btn-nav-resume span {
+    display: none;
+  }
+}
+
+/* Hero Section */
 .hero-section {
   min-height: 100vh;
   display: flex;
@@ -1528,11 +1578,93 @@ body {
   transform: translateY(-3px);
 }
 
-/* Hide back-to-top whenever the chatbot is open (scroll listener can't override this) */
-body.chat-open #back-to-top {
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transform: translateY(16px) !important;
+/* Navbar Mobile Cleanup */
+@media (max-width: 768px) {
+  .btn-nav-resume {
+    display: none !important; /* Hide Resume from top row */
+  }
+  
+  /* Keep theme toggle but move it if needed or just let it stay if there is space */
+  .theme-toggle {
+    margin-right: 8px;
+  }
+
+  .nav-resume-mobile {
+    display: block !important;
+    text-align: center;
+    background: var(--accent-primary);
+    color: white !important;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+}
+
+.nav-resume-mobile {
+  display: none;
+}
+
+/* Chatbot UX Polish */
+.cb-chips {
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--glass-border);
+  overflow-x: auto; /* Allow swiping horizontally */
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+}
+
+.cb-chips::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.cb-chip {
+  flex-shrink: 0; /* Don't squash chips */
+  white-space: nowrap; /* Keep text on one line */
+}
+
+/* Chatbot Mobile (Specific) */
+@media (max-width: 480px) {
+  .chatbot-panel {
+    width: calc(100vw - 24px); /* Almost full screen width */
+    height: 70vh; /* Shorter to avoid keyboard covering it */
+    bottom: 85px;
+    right: 12px;
+  }
+  
+  .chatbot-toggle {
+    width: 60px; /* Shrunk from 75px */
+    height: 60px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .chatbot-toggle i {
+    font-size: 1.4rem;
+  }
+
+  .cb-close {
+    width: 40px; /* Shrunk from 55px */
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Hero Heading Polish on Mobile */
+@media (max-width: 580px) {
+  .hero-title {
+    font-size: 2.8rem;
+    line-height: 1.1;
+  }
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+  .nav-links {
+    padding-top: 100px; /* Space for items in burger */
+  }
 }
 
 /* Footer */
