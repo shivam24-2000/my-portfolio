@@ -44,7 +44,7 @@ export function initHeroGlobe(containerId) {
     
     const pointsMat = new THREE.PointsMaterial({
         size: 0.035,
-        color: 0x6366f1, // Premium Indigo
+        color: 0xd4c5b9, // Premium Champagne Gold
         transparent: true,
         opacity: 0.6,
         blending: THREE.AdditiveBlending
@@ -112,13 +112,13 @@ export function initHeroGlobe(containerId) {
         
         // Color adjustments based on theme
         if (isLight) {
-            pointsMat.color.setHex(0x4f46e5); // Darker Indigo for light mode
-            innerWireMat.color.setHex(0x94a3b8);
-            fieldMat.color.setHex(0x64748b);
+            pointsMat.color.setHex(0x1c1917); // Stone off-black for light mode
+            innerWireMat.color.setHex(0xa8a29e);
+            fieldMat.color.setHex(0x78716c);
         } else {
-            pointsMat.color.setHex(0x6366f1); // Light Indigo for dark mode
-            innerWireMat.color.setHex(0x334155);
-            fieldMat.color.setHex(0x94a3b8);
+            pointsMat.color.setHex(0xd4c5b9); // Champagne Gold for dark mode
+            innerWireMat.color.setHex(0x27272a);
+            fieldMat.color.setHex(0xa89a8c);
         }
 
         // Extremely smooth, slow rotations
@@ -159,7 +159,7 @@ export function initFloatingArchitecture(containerId) {
 
     for (let i = 0; i < nodeCount; i++) {
         const mat = new THREE.MeshBasicMaterial({
-            color: 0x6366f1,
+            color: 0xd4c5b9,
             transparent: true,
             opacity: 0.7
         });
@@ -179,7 +179,7 @@ export function initFloatingArchitecture(containerId) {
 
     const linesGeo = new THREE.BufferGeometry();
     const linesMat = new THREE.LineBasicMaterial({
-        color: 0x6366f1,
+        color: 0xd4c5b9,
         transparent: true,
         opacity: 0.15
     });
@@ -192,7 +192,7 @@ export function initFloatingArchitecture(containerId) {
         t += 0.005;
 
         const isLight = getThemeState();
-        const mainColor = isLight ? 0x4f46e5 : 0x6366f1;
+        const mainColor = isLight ? 0x1c1917 : 0xd4c5b9;
         linesMat.color.setHex(mainColor);
 
         // Drift nodes slowly
