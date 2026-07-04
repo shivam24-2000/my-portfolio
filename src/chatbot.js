@@ -19,7 +19,7 @@ const KB = {
     `"Good morning. I've already reviewed your schedule and… oh wait, I'm **Friday**, Shivam's AI — not Tony's. 😄\n\nBut I *do* know everything about him. Ask me about his **experience**, **projects**, **skills**, or whether he's **open to hire**!`,
     `Hey! 👾 Systems online. I'm **Friday** — Shivam built me (yes, *that* Shivam, the backend engineer).\n\nWhat do you want to know? I've got experience data, project specs, tech stack — the works.`,
     `Hello there. 🤖 I'm **Friday**, Shivam's personal AI assistant.\n\nI can tell you about his career at **Bank of America**, his side projects, his skills, or just how to reach him. Fire away!`,
-    `Glad you stopped by! I'm **Friday** — think of me as Shivam's digital PR department.\n\nI can tell you about his **2+ years of backend engineering**, his **AI + IoT projects**, or help you decide whether to **hire him** (spoiler: you should). 😏`,
+    `Glad you stopped by! I'm **Friday** — think of me as Shivam's digital PR department.\n\nI can tell you about his **3+ years of backend engineering**, his **AI + IoT projects**, or help you decide whether to **hire him** (spoiler: you should). 😏`,
   ],
 
   farewellReplies: [
@@ -62,7 +62,7 @@ const KB = {
       id: 'about',
       patterns: ['who is shivam', 'about shivam', 'tell me about him', 'background', 'describe him', 'shivam singhal'],
       replies: [
-        `**Shivam Singhal** — Backend/Platform Engineer. 🏗️\n\n2+ years shipping production systems at **Bank of America**, handling <1M requests/day. He doesn't just write code — he architects systems that *don't break*.\n\n🧠 **What makes him different:**\n• Migrated monoliths → microservices with zero downtime\n• Cut deployment time from **4 hours → 40 minutes**\n• Obsessed with observability (Splunk is practically a love language)\n• Built a native iOS app *and* an IoT weather station *just for fun*\n\nCurrently based in **Hyderabad, India**, actively looking for his next big move.`,
+        `**Shivam Singhal** — Backend/Platform Engineer. 🏗️\n\n3+ years shipping production systems at **Bank of America**, handling <1M requests/day. He doesn't just write code — he architects systems that *don't break*.\n\n🧠 **What makes him different:**\n• Migrated monoliths → microservices with zero downtime\n• Cut deployment time from **4 hours → 40 minutes**\n• Obsessed with observability (Splunk is practically a love language)\n• Built a native iOS app *and* an IoT weather station *just for fun*\n\nCurrently based in **Hyderabad, India**, actively looking for his next big move.`,
         `Shivam is the kind of engineer who reduces query latency from **800ms → 320ms** and then goes home to build an **AI interview platform** for fun.\n\n🏦 By day: SDE-I at Bank of America, building microservices that serve millions of requests.\n📱 By night: iOS apps, IoT hardware, and apparently… AI assistants named Friday.\n\nHe's actively seeking **SDE-II / Senior Backend** roles. Want to know more?`,
       ]
     },
@@ -129,8 +129,8 @@ const KB = {
       id: 'hire',
       patterns: ['hire', 'available', 'open to work', 'looking for job', 'opportunity', 'recruit', 'recruiting', 'position', 'job opening', 'vacancy', 'offer'],
       replies: [
-        `🟢 **Yes. Hire him. Do it.**\n\nHere's the elevator pitch:\n\n🎯 **Role:** SDE-II / Senior Backend or Platform Engineer\n🏗️ **Expertise:** Microservices · Distributed systems · DevOps\n📍 **Where:** Hyderabad (hybrid) · Remote · Relocation ✅\n💡 **Why him:** 2+ years at a FAANG-tier bank, handling <1M req/day, 10+ microservices built, 90% deployment speedup\n\nSeriously though — someone who reduces SQL latency by **60%** and then builds an **AI interview platform** for fun is not someone you let get away.\n\n📬 **shivamsinghal24@gmail.com**`,
-        `The short answer: **Yes, he's available and you should absolutely reach out.**\n\n📋 What he's looking for:\n→ SDE-II or Senior Backend/Platform Engineer\n→ Systems that *actually scale*\n→ Team that cares about code quality\n→ Hybrid, remote, or relocation — flexible!\n\nThe long answer: He has 2+ years of enterprise-scale experience, a portfolio of AI/iOS/IoT projects, and a commitment to operational excellence that most engineers twice his experience lack.\n\n📧 **shivamsinghal24@gmail.com** — go on, open a new tab.`,
+        `🟢 **Yes. Hire him. Do it.**\n\nHere's the elevator pitch:\n\n🎯 **Role:** SDE-II / Senior Backend or Platform Engineer\n🏗️ **Expertise:** Microservices · Distributed systems · DevOps\n📍 **Where:** Hyderabad (hybrid) · Remote · Relocation ✅\n💡 **Why him:** 3+ years at a FAANG-tier bank, handling <1M req/day, 10+ microservices built, 90% deployment speedup\n\nSeriously though — someone who reduces SQL latency by **60%** and then builds an **AI interview platform** for fun is not someone you let get away.\n\n📬 **shivamsinghal24@gmail.com**`,
+        `The short answer: **Yes, he's available and you should absolutely reach out.**\n\n📋 What he's looking for:\n→ SDE-II or Senior Backend/Platform Engineer\n→ Systems that *actually scale*\n→ Team that cares about code quality\n→ Hybrid, remote, or relocation — flexible!\n\nThe long answer: He has 3+ years of enterprise-scale experience, a portfolio of AI/iOS/IoT projects, and a commitment to operational excellence that most engineers twice his experience lack.\n\n📧 **shivamsinghal24@gmail.com** — go on, open a new tab.`,
       ]
     },
 
@@ -146,7 +146,7 @@ const KB = {
       id: 'education',
       patterns: ['education', 'college', 'university', 'degree', 'study', 'studied', 'graduated', 'qualification', 'academic'],
       replies: [
-        `🎓 **Education:**\n\nComputer Science/Engineering degree — the foundation under everything else. But honestly, Shivam's real education has been:\n\n• Shipping production code for **Bank of America** serving millions\n• Debugging distributed systems at 2am with Splunk as your only friend\n• Building iOS apps, IoT firmware, and AI platforms *on the side*\n\nThe degree opened the door. The work ethic built the room.`,
+        `🎓 **Education:**\n\nShivam completed his **B.Tech in Computer Science & Engineering** from **Vellore Institute Of Technology (VIT)**, graduating in 2023 with an impressive **8.4/10 CGPA**.\n\nBut his learning didn't stop there. Since graduating, he has:\n• Shipped production code for **Bank of America** serving enterprise loads\n• Debugged complex microservices using Splunk\n• Built dynamic AI, iOS, and IoT platforms on the side\n\nThe degree was the foundation. The actual engineering built the resume.`,
       ]
     },
 

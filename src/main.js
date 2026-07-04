@@ -586,6 +586,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 17. --- Sticky Recruiter CTA Bar ---
+    const recruiterBar = document.getElementById('recruiter-bar');
+    if (recruiterBar) {
+        const heroSection = document.getElementById('hero');
+        let recruiterBarVisible = false;
+
+        window.addEventListener('scroll', () => {
+            const heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 600;
+            const shouldShow = window.scrollY > heroBottom - 200;
+
+            if (shouldShow && !recruiterBarVisible) {
+                recruiterBar.classList.add('visible');
+                document.body.classList.add('rbar-active');
+                recruiterBarVisible = true;
+            } else if (!shouldShow && recruiterBarVisible) {
+                recruiterBar.classList.remove('visible');
+                document.body.classList.remove('rbar-active');
+                recruiterBarVisible = false;
+            }
+        });
+    }
+
+
+
 });
 
 // --- Final Mobile Responsiveness & Touch Support ---

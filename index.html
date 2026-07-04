@@ -5,7 +5,36 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shivam Singhal | Backend/Platform Engineer</title>
+  <title>Shivam Singhal | Backend/Platform Engineer — Open to Work</title>
+  <meta name="description" content="Backend & Platform Engineer with 3+ years at Bank of America. Specializing in microservices, distributed systems, and DevOps. Architecting systems serving <1M requests/day. Open to SDE-II / Senior Backend roles." />
+  <meta name="keywords" content="Shivam Singhal, Backend Engineer, Platform Engineer, Spring Boot, Microservices, Java, Docker, Kubernetes, Bank of America, Distributed Systems, DevOps, Open to Work" />
+  <meta name="author" content="Shivam Singhal" />
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shivam Singhal — Backend/Platform Engineer" />
+  <meta property="og:description" content="3+ years building enterprise-grade microservices at Bank of America. 10+ services, 90% deployment speedup, <1M req/day. Open to SDE-II / Senior Backend roles." />
+  <meta property="og:image" content="/favicon.svg" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Shivam Singhal — Backend/Platform Engineer" />
+  <meta name="twitter:description" content="3+ years building enterprise-grade microservices at Bank of America. Open to SDE-II / Senior Backend roles." />
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shivam Singhal",
+    "jobTitle": "Software Development Engineer",
+    "worksFor": { "@type": "Organization", "name": "Bank of America" },
+    "url": "https://shivamsinghal.dev",
+    "sameAs": [
+      "https://github.com/shivam24-2000",
+      "https://linkedin.com/in/shivam-singhal-538369191/"
+    ],
+    "knowsAbout": ["Microservices", "Spring Boot", "Java", "Docker", "Kubernetes", "Distributed Systems"]
+  }
+  </script>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,21 +45,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/src/style.css">
 
-  <style>
-    /* Local overrides for new content from user updating simple layout headers which didn't exist in style.css variables yet */
-    .open-work-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    @media (max-width: 768px) {
-      .open-work-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -64,7 +78,9 @@
       <a href="#hero" class="nav-item active">Home</a>
       <a href="#about" class="nav-item">About</a>
       <a href="#experience" class="nav-item">Experience</a>
+      <a href="#education" class="nav-item">Education</a>
       <a href="#projects" class="nav-item">Projects</a>
+      <a href="#open-to-work" class="nav-item">Hire Me</a>
       <a href="#contact" class="nav-item">Contact</a>
       <a href="resume.pdf?v=2" download="Shivam_Singhal.pdf" class="nav-item nav-resume-mobile">Resume</a>
     </nav>
@@ -144,11 +160,7 @@
 
         <!-- Right: 3D Globe -->
         <div class="hero-3d-col">
-          <div id="hero-globe-canvas" class="hero-globe-wrap">
-            <div class="globe-badge globe-badge-1"><i class="fa-solid fa-bolt"></i> Spring Boot</div>
-            <div class="globe-badge globe-badge-2"><i class="fa-brands fa-docker"></i> Docker</div>
-            <div class="globe-badge globe-badge-3"><i class="fa-solid fa-microchip"></i> Distributed Systems</div>
-          </div>
+          <div id="hero-globe-canvas" class="hero-globe-wrap"></div>
         </div>
       </div>
 
@@ -179,13 +191,59 @@
               on impact.</p>
 
             <div class="skills-wrap">
-              <h3>Core Frameworks</h3>
-              <div class="skills-grid">
-                <div class="skill-item"><i class="fa-solid fa-bolt skill-icon backend"></i> Spring Boot / Java</div>
-                <div class="skill-item"><i class="fa-brands fa-docker skill-icon container-icon"></i> Docker /
-                  Kubernetes</div>
-                <div class="skill-item"><i class="fa-solid fa-chart-line skill-icon ops"></i> Splunk / CI/CD</div>
-                <div class="skill-item"><i class="fa-solid fa-database skill-icon db"></i> Oracle SQL / optimization
+              <h3>Technical Arsenal</h3>
+              <div class="skills-categories">
+                <div class="skill-category">
+                  <span class="skill-cat-label"><i class="fa-solid fa-server"></i> Backend</span>
+                  <div class="skill-tags">
+                    <span class="skill-tag primary">Java</span>
+                    <span class="skill-tag primary">Spring Boot</span>
+                    <span class="skill-tag">ASP.NET Core</span>
+                    <span class="skill-tag">Python</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <span class="skill-cat-label"><i class="fa-brands fa-docker"></i> DevOps</span>
+                  <div class="skill-tags">
+                    <span class="skill-tag primary">Docker</span>
+                    <span class="skill-tag primary">Kubernetes</span>
+                    <span class="skill-tag">OpenShift</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">GitHub Actions</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <span class="skill-cat-label"><i class="fa-solid fa-database"></i> Data</span>
+                  <div class="skill-tags">
+                    <span class="skill-tag primary">Oracle SQL</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Supabase</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <span class="skill-cat-label"><i class="fa-solid fa-chart-line"></i> Observability</span>
+                  <div class="skill-tags">
+                    <span class="skill-tag primary">Splunk</span>
+                    <span class="skill-tag">Distributed Tracing</span>
+                    <span class="skill-tag">Alerting</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <span class="skill-cat-label"><i class="fa-solid fa-mobile-screen"></i> Frontend / Mobile</span>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Swift</span>
+                    <span class="skill-tag">SwiftUI</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <span class="skill-cat-label"><i class="fa-solid fa-robot"></i> AI / ML</span>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Claude API</span>
+                    <span class="skill-tag">LLM Integration</span>
+                    <span class="skill-tag">WebRTC</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -376,15 +434,44 @@
       </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span class="number">03.</span> Education & Certifications</h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="edu-timeline">
+          <!-- Degree -->
+          <div class="edu-card">
+            <div class="edu-card-accent"></div>
+            <div class="edu-card-body">
+              <div class="edu-badge"><i class="fa-solid fa-graduation-cap"></i> Degree</div>
+              <h3 class="edu-degree">B.Tech in Computer Science & Engineering</h3>
+              <div class="edu-meta">
+                <span><i class="fa-solid fa-building-columns"></i> Vellore Institute Of Technology</span>
+                <span><i class="fa-solid fa-calendar-days"></i> 2019 – 2023</span>
+                <span><i class="fa-solid fa-star"></i> 8.4/10 CGPA</span>
+                <span><i class="fa-solid fa-location-dot"></i> India</span>
+              </div>
+              <p class="edu-desc">Relevant coursework: Data Structures & Algorithms, Distributed Systems, Database Management, Operating Systems, Computer Networks, Software Engineering</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="section projects-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title"><span class="number">03.</span> The Experiments: Engineering Impact</h2>
+          <h2 class="section-title"><span class="number">04.</span> The Experiments: Engineering Impact</h2>
           <div class="title-line"></div>
         </div>
         <p class="section-hook">Breaking boundaries with <b>AI integration</b>, <b>real-time networking</b>, and
-          <b>high-performance</b> system design.</p>
+          <b>high-performance</b> system design.
+        </p>
 
         <div class="projects-list">
           <!-- Project 1 -->
@@ -411,8 +498,8 @@
             </div>
             <div class="project-mockup mac-mockup">
               <div class="mockup-header"><i></i><i></i><i></i></div>
-              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
-                alt="AI Interview Platform dashboard view">
+               <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
+                alt="AI Interview Platform dashboard view" loading="lazy">
             </div>
           </div>
 
@@ -441,7 +528,7 @@
             <div class="project-mockup ios-mockup">
               <div class="mockup-notch"></div>
               <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=300&q=80"
-                alt="Trekr iOS Application Interface on Phone">
+                alt="Trekr iOS Application Interface on Phone" loading="lazy">
             </div>
           </div>
 
@@ -470,79 +557,137 @@
             <div class="project-mockup mac-mockup">
               <div class="mockup-header"><i></i><i></i><i></i></div>
               <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
-                alt="Custom IoT Dashboard layout graphs">
+                alt="Custom IoT Dashboard layout graphs" loading="lazy">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Open to Work Section -->
+    <!-- Open to Work Section — Enhanced for Recruiters -->
     <section id="open-to-work" class="section open-to-work-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title"><span class="number">04.</span> Open to Work</h2>
+          <h2 class="section-title"><span class="number">05.</span> Open to Work</h2>
           <div class="title-line"></div>
         </div>
 
-        <div class="contact-box"
-          style="border: 1px solid rgba(76, 175, 80, 0.2); max-width: 800px; padding: 40px; text-align: left; background: rgba(76, 175, 80, 0.03);">
-          <h3 style="color: #4caf50; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; margin-bottom: 15px;">
-            🚀 Actively Seeking Backend/Platform Engineering Roles</h3>
-          <p style="color: var(--text-muted); margin-bottom:-5px;">I'm looking for opportunities to own the full service
-            lifecycle: architecture &rarr; deployment &rarr; operations. I'm drawn to roles where I can build scalable
-            systems and modernize legacy infrastructure.</p>
+        <!-- TL;DR Recruiter Card -->
+        <div class="recruiter-tldr">
+          <div class="tldr-header">
+            <span class="tldr-badge"><span class="live-dot"></span> Actively Looking</span>
+            <h3 class="tldr-title">TL;DR for Recruiters</h3>
+          </div>
 
-          <div class="open-work-grid">
-            <div class="bento-box" style="align-items: flex-start; padding: 20px; animation: none; height: auto;">
-              <div style="color: #4caf50; font-weight: 600; font-size: 0.9rem;">Role Level</div>
-              <div style="color: var(--text-main); margin-top: 5px; font-size: 0.95rem;">SDE-II / Senior
-                Backend/Platform Engineer</div>
+          <div class="tldr-highlights">
+            <div class="tldr-stat">
+              <span class="tldr-number">3+</span>
+              <span class="tldr-label">Years Enterprise Experience</span>
             </div>
-            <div class="bento-box" style="align-items: flex-start; padding: 20px; animation: none; height: auto;">
-              <div style="color: #4caf50; font-weight: 600; font-size: 0.9rem;">Role Focus</div>
-              <div style="color: var(--text-main); margin-top: 5px; font-size: 0.95rem;">Microservices · Distributed
-                systems · DevOps</div>
+            <div class="tldr-stat">
+              <span class="tldr-number">10+</span>
+              <span class="tldr-label">Microservices Shipped</span>
             </div>
-            <div class="bento-box" style="align-items: flex-start; padding: 20px; animation: none; height: auto;">
-              <div style="color: #4caf50; font-weight: 600; font-size: 0.9rem;">Location</div>
-              <div style="color: var(--text-main); margin-top: 5px; font-size: 0.95rem;">Hyderabad (hybrid/on-site),
-                Remote, Relocation OK</div>
+            <div class="tldr-stat">
+              <span class="tldr-number">90%</span>
+              <span class="tldr-label">Deployment Speedup</span>
             </div>
-            <div class="bento-box" style="align-items: flex-start; padding: 20px; animation: none; height: auto;">
-              <div style="color: #4caf50; font-weight: 600; font-size: 0.9rem;">What I Bring</div>
-              <div style="color: var(--text-main); margin-top: 5px; font-size: 0.95rem;">2.7+ years FAANG/banking,
-                system design expertise</div>
+            <div class="tldr-stat">
+              <span class="tldr-number">&lt;1M</span>
+              <span class="tldr-label">Requests/Day Handled</span>
             </div>
           </div>
+
+          <div class="tldr-details">
+            <div class="tldr-detail-item">
+              <span class="tldr-detail-label"><i class="fa-solid fa-bullseye"></i> Target Role</span>
+              <span class="tldr-detail-value">SDE-II / Senior Backend/Platform Engineer</span>
+            </div>
+            <div class="tldr-detail-item">
+              <span class="tldr-detail-label"><i class="fa-solid fa-code"></i> Core Focus</span>
+              <span class="tldr-detail-value">Microservices · Distributed Systems · DevOps</span>
+            </div>
+            <div class="tldr-detail-item">
+              <span class="tldr-detail-label"><i class="fa-solid fa-building"></i> Current</span>
+              <span class="tldr-detail-value">Bank of America — SDE I (3+ years)</span>
+            </div>
+            <div class="tldr-detail-item">
+              <span class="tldr-detail-label"><i class="fa-solid fa-location-dot"></i> Location</span>
+              <span class="tldr-detail-value">Hyderabad · Remote · Relocation OK</span>
+            </div>
+          </div>
+
+          <div class="tldr-actions">
+            <a href="/resume.pdf?v=2" download="Shivam_Singhal.pdf" class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
+            <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Email Me</a>
+            <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+
+        <!-- What I'm Looking For -->
+        <div class="otw-narrative">
+          <p>I'm looking for opportunities to own the full service
+            lifecycle: architecture &rarr; deployment &rarr; operations. I'm drawn to roles where I can build scalable
+            systems and modernize legacy infrastructure.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+
+
+    <!-- Contact Section — Enhanced -->
     <section id="contact" class="section contact-section">
       <div id="contact-canvas" class="section-3d-bg"></div>
       <div class="container">
         <div class="contact-box">
           <h2 class="contact-title">Let's Connect</h2>
           <p class="contact-desc">Ready to discuss how I can help scale your backend infrastructure or modernize your
-            legacy systems? Feel free to reach out.</p>
+            legacy systems? I typically respond within <strong>24 hours</strong>.</p>
+
+
 
           <div class="contact-methods">
-            <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-primary btn-glow">Get In Touch <i
-                class="fa-solid fa-envelope"></i></a>
-
-            <div class="social-links">
-              <a href="https://github.com/shivam24-2000" class="social-icon" target="_blank"><i
-                  class="fa-brands fa-github"></i></a>
-              <a href="https://linkedin.com/in/shivam-singhal-538369191/" class="social-icon" target="_blank"><i
-                  class="fa-brands fa-linkedin"></i></a>
-            </div>
+            <a href="mailto:shivamsinghal24@gmail.com" class="contact-method-card">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <span>shivamsinghal24@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="contact-method-card">
+              <i class="fa-brands fa-linkedin"></i>
+              <div>
+                <strong>LinkedIn</strong>
+                <span>Connect professionally</span>
+              </div>
+            </a>
+            <a href="https://github.com/shivam24-2000" target="_blank" class="contact-method-card">
+              <i class="fa-brands fa-github"></i>
+              <div>
+                <strong>GitHub</strong>
+                <span>View my code</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Sticky Recruiter CTA Bar -->
+  <div id="recruiter-bar" class="recruiter-bar">
+    <div class="recruiter-bar-inner">
+      <div class="recruiter-bar-status">
+        <span class="live-dot"></span>
+        <span>Open to Work</span>
+      </div>
+      <div class="recruiter-bar-actions">
+        <a href="/resume.pdf?v=2" download="Shivam_Singhal.pdf" class="rbar-btn rbar-resume"><i class="fa-solid fa-file-arrow-down"></i> <span>Resume</span></a>
+        <a href="mailto:shivamsinghal24@gmail.com" class="rbar-btn rbar-email"><i class="fa-solid fa-envelope"></i> <span>Email</span></a>
+        <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="rbar-btn rbar-linkedin"><i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span></a>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -554,7 +699,9 @@
         <a href="#hero">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
         <a href="#projects">Projects</a>
+        <a href="#open-to-work">Hire Me</a>
       </div>
       <div class="footer-social">
         <a href="https://github.com/shivam24-2000" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -582,7 +729,8 @@
     <div class="cb-header">
       <div class="cb-header-avatar"><i class="fa-solid fa-robot"></i></div>
       <div class="cb-header-info">
-        <div class="cb-header-name">Friday <span style="font-weight:400;color:var(--text-muted);font-size:0.8rem;">· AI</span></div>
+        <div class="cb-header-name">Friday <span style="font-weight:400;color:var(--text-muted);font-size:0.8rem;">·
+            AI</span></div>
         <div class="cb-header-status"><span class="cb-status-dot"></span> Online · Knows Shivam well</div>
       </div>
       <button id="chatbot-close" aria-label="Close chat"><i class="fa-solid fa-chevron-down"></i></button>
@@ -605,14 +753,8 @@
 
     <!-- Input -->
     <div class="cb-footer">
-      <input
-        type="text"
-        id="chatbot-input"
-        placeholder="Ask me about Shivam…"
-        autocomplete="off"
-        spellcheck="false"
-        maxlength="200"
-      />
+      <input type="text" id="chatbot-input" placeholder="Ask me about Shivam…" autocomplete="off" spellcheck="false"
+        maxlength="200" />
       <button id="chatbot-send" aria-label="Send message">
         <i class="fa-solid fa-paper-plane"></i>
       </button>
