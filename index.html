@@ -3,839 +3,653 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shivam Singhal | Backend/Platform Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>Shivam Singhal — Backend Software Engineer</title>
   <meta name="description"
-    content="Backend & Platform Engineer with 3+ years at Bank of America. Specializing in microservices, distributed systems, and DevOps. Architecting systems serving <1M requests/day. Open to SDE-II / Senior Backend roles." />
-  <meta name="keywords"
-    content="Shivam Singhal, Backend Engineer, Platform Engineer, Spring Boot, Microservices, Java, Docker, Kubernetes, Bank of America, Distributed Systems, DevOps, Open to Work" />
+    content="Backend Software Engineer with 3+ years at Bank of America. Java, Spring Boot and microservices handling ~1M requests/day, owned end to end from system design to incident response. Open to SDE-II / Senior Backend roles." />
   <meta name="author" content="Shivam Singhal" />
   <meta name="robots" content="index, follow" />
-  <!-- Open Graph -->
+  <meta name="theme-color" content="#0a0b0d" />
+  <link rel="canonical" href="https://shivam-singhal.vercel.app/" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Shivam Singhal — Backend/Platform Engineer" />
+  <meta property="og:url" content="https://shivam-singhal.vercel.app/" />
+  <meta property="og:title" content="Shivam Singhal — Backend Software Engineer" />
   <meta property="og:description"
-    content="3+ years building enterprise-grade microservices at Bank of America. 10+ services, 90% deployment speedup, <1M req/day. Open to SDE-II / Senior Backend roles." />
+    content="I own backend services end to end: design, code, deploy, operate. Spring Boot microservices handling ~1M requests/day. Open to SDE-II / Senior Backend roles." />
   <meta property="og:image" content="/favicon.svg" />
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Shivam Singhal — Backend/Platform Engineer" />
+  <meta name="twitter:title" content="Shivam Singhal — Backend Software Engineer" />
   <meta name="twitter:description"
-    content="3+ years building enterprise-grade microservices at Bank of America. Open to SDE-II / Senior Backend roles." />
-  <!-- JSON-LD Structured Data -->
+    content="I own backend services end to end. Open to SDE-II / Senior Backend roles." />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Shivam Singhal",
-    "jobTitle": "Software Development Engineer",
+    "jobTitle": "Backend Software Engineer",
     "worksFor": { "@type": "Organization", "name": "Bank of America" },
-    "url": "https://shivamsinghal.dev",
+    "url": "https://shivam-singhal.vercel.app/",
     "sameAs": [
       "https://github.com/shivam24-2000",
       "https://linkedin.com/in/shivam-singhal-538369191/"
     ],
-    "knowsAbout": ["Microservices", "Spring Boot", "Java", "Docker", "Kubernetes", "Distributed Systems"]
+    "knowsAbout": ["Java", "Spring Boot", "Microservices", "Distributed Systems", "REST APIs", "Kubernetes", "OpenShift", "System Design"]
   }
   </script>
-  <!-- Fonts -->
+
+  <!-- Apply saved / system theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
     rel="stylesheet">
-  <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link rel="stylesheet" href="/src/style.css">
-
 </head>
 
 <body>
-  <!-- Ambient Background Motion Layers -->
-  <div class="bg-ambient-layer">
-    <div class="bg-grid"></div>
-    <div class="bg-noise"></div>
-  </div>
-  <!-- Boot-up Preloader -->
-  <div id="preloader">
-    <div id="boot-terminal"></div>
-  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Scroll Progress Bar -->
-  <div id="scroll-progress"></div>
-
-  <!-- Background Blur Orbs -->
-  <div class="glow-orb orb-1"></div>
-  <div class="glow-orb orb-2"></div>
-  <div class="glow-orb orb-3"></div>
-  <canvas id="particle-canvas"></canvas>
-
-  <!-- Custom Cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-dot"></div>
-
-  <nav class="navbar" id="navbar">
-    <div class="logo">S<span class="logo-dot">.</span></div>
-
-    <nav class="nav-links" id="nav-links">
-      <a href="#hero" class="nav-item active">Home</a>
-      <a href="#about" class="nav-item">About</a>
-      <a href="#experience" class="nav-item">Experience</a>
-      <a href="#education" class="nav-item">Education</a>
-      <a href="#projects" class="nav-item">Projects</a>
-      <a href="#open-to-work" class="nav-item">Hire Me</a>
-      <a href="#contact" class="nav-item">Contact</a>
-      <a href="resume.pdf?v=2" download="Shivam_Singhal.pdf" class="nav-item nav-resume-mobile">Resume</a>
-    </nav>
-
-    <div class="nav-cta">
-      <div id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <div class="toggle-track">
-          <div class="toggle-icon sun"><i class="fa-solid fa-sun"></i></div>
-          <div class="toggle-icon moon"><i class="fa-solid fa-moon"></i></div>
-          <div class="toggle-ball"></div>
-        </div>
-      </div>
-
-      <a href="/resume.pdf?v=2" download="Shivam_Singhal.pdf" target="_blank" class="btn btn-nav-resume">
-        <i class="fa-solid fa-file-arrow-down"></i>
-        <span>Resume</span>
+  <!-- ───────────── Navigation ───────────── -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="Shivam Singhal — home">
+        <span class="brand-mark">SS</span>
+        <span class="brand-name">Shivam Singhal</span>
       </a>
 
-      <a href="#contact" class="btn btn-outline" style="padding: 10px 18px; font-size: 0.9rem;">Hire Me</a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#ownership">How I operate</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle color theme">
+          <i class="fa-solid fa-moon theme-icon-dark"></i>
+          <i class="fa-solid fa-sun theme-icon-light"></i>
+        </button>
+        <a href="/resume.pdf?v=3" download="Shivam_Singhal_Resume.pdf" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-arrow-down"></i> Resume
+        </a>
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false"
+          aria-controls="nav-links">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
-  </nav>
+    <div id="scroll-progress" aria-hidden="true"></div>
+  </header>
 
-  <main id="app">
-    <!-- Hero Section -->
-    <section id="hero" class="section hero-section">
-      <div class="hero-layout">
-        <!-- Left: Text Content -->
-        <div class="container hero-text-col">
-          <div class="hero-open-badge"><span class="open-dot"></span> Open to Work</div>
-          <p class="hero-sub">Hi, my name is</p>
-          <h1 class="hero-title">Shivam Singhal<span class="accent-dot">.</span></h1>
-          <h2 class="hero-subtitle"><span id="typewriter"></span><span class="type-cursor">|</span></h2>
+  <main id="main">
+    <!-- ───────────── Hero ───────────── -->
+    <section class="hero" id="top">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <a href="#contact" class="status-pill load-in" style="--d: 0ms">
+            <span class="pulse"></span>
+            Open to SDE II / Senior Backend roles
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
 
-          <p class="hero-desc">I build scalable microservice architectures and modernize legacy systems. At Bank of
-            America, I architect distributed systems serving &lt;1M requests/day while reducing deployment time by 90%
-            and
-            operational overhead by 80%.</p>
+          <h1 class="hero-title">
+            I build backend systems and <em>own&nbsp;them</em> in production.
+          </h1>
 
-          <p class="hero-desc"
-            style="font-size: 1rem; color: var(--text-dark); margin-top: -15px; margin-bottom: 20px;">I
-            specialize in: System design · High-scale optimization · DevOps modernization · Operational reliability</p>
+          <p class="hero-lede load-in" style="--d: 650ms">
+            Backend Software Engineer with 3+ years at <strong>Bank of America</strong>, building Java and Spring Boot
+            microservices that handle <strong>~1 million requests a day</strong>. I own services end to end, from
+            system design and code review to CI/CD, monitoring and incident response.
+          </p>
 
-          <div class="project-tech" style="margin-bottom: 30px;">
-            <span>Spring Boot</span>
-            <span>Microservices</span>
-            <span>Docker/OpenShift</span>
-            <span>Oracle SQL</span>
-            <span>Kubernetes</span>
-            <span>CI/CD</span>
-            <span>Splunk/Observability</span>
-            <span>TypeScript</span>
-            <span>Swift/iOS</span>
+          <div class="hero-cta load-in" style="--d: 800ms">
+            <a href="#work" class="btn btn-primary">See the impact <i class="fa-solid fa-arrow-down"></i></a>
+            <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-ghost"><i class="fa-regular fa-envelope"></i>
+              Get in touch</a>
           </div>
 
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="https://github.com/shivam24-2000" target="_blank" class="btn btn-secondary"><i
-                class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="btn btn-secondary"><i
-                class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          </div>
+          <ul class="hero-meta load-in" style="--d: 950ms">
+            <li><i class="fa-solid fa-location-dot"></i> Hyderabad · Open to relocation</li>
+            <li><i class="fa-brands fa-java"></i> Java · Spring Boot · Microservices</li>
+          </ul>
+        </div>
 
-          <!-- What I'm Building Now Widget -->
-          <a href="javascript:void(0)" id="building-modal-trigger" class="building-widget">
-            <div class="building-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <div class="building-text">
-              <span class="building-label">What I'm building now</span>
-              <span class="building-title">AI Interview Prep Platform</span>
+        <!-- Impact panel styled like a production health dashboard -->
+        <aside class="impact-panel reveal" aria-label="Production impact summary">
+          <div class="panel-head">
+            <div class="panel-title">
+              <span class="dot-row"><i></i><i></i><i></i></span>
+              <span class="mono">prod / impact-summary</span>
             </div>
-            <i class="fa-solid fa-arrow-right building-arrow"></i>
+            <span class="health"><span class="pulse"></span> healthy</span>
+          </div>
+
+          <div class="panel-kpis">
+            <div class="kpi">
+              <span class="kpi-pre">~</span><span class="kpi-val">1</span><span class="kpi-unit">M</span>
+              <span class="kpi-label">Requests / day</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-val" data-count="60">60</span><span class="kpi-unit">%</span>
+              <span class="kpi-label">Faster data retrieval</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-val">0</span>
+              <span class="kpi-label">Security audit findings</span>
+            </div>
+          </div>
+
+          <div class="panel-rows">
+            <div class="metric-row">
+              <div class="metric-top">
+                <span>Oracle query performance</span>
+                <span class="mono">queries · indexes · schema</span>
+              </div>
+              <div class="bar"><span class="bar-before"></span><span class="bar-after" style="--w: 40%"></span></div>
+              <span class="delta">+60%</span>
+            </div>
+            <div class="metric-row">
+              <div class="metric-top">
+                <span>Deploy time · CI/CD <span class="muted">(Incedo)</span></span>
+                <span class="mono"><s>45m</s> → <b>8m</b></span>
+              </div>
+              <div class="bar"><span class="bar-before"></span><span class="bar-after" style="--w: 18%"></span></div>
+              <span class="delta">−82%</span>
+            </div>
+          </div>
+
+          <ul class="checks">
+            <li><i class="fa-solid fa-check"></i><span>Fault tolerance</span><span class="mono">retries · circuit breakers</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Observability</span><span class="mono">Splunk · Dynatrace · RCA</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Runtime</span><span class="mono">Docker · OpenShift (k8s)</span></li>
+          </ul>
+
+          <div class="panel-foot mono">
+            <span>owned: design → review → deploy → on-call</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="container">
+        <div class="trust-strip">
+          <span class="trust-label">Currently</span>
+          <span class="trust-item"><b>Bank of America</b> · Software Development Engineer</span>
+          <span class="trust-sep"></span>
+          <span class="trust-item">Full-lifecycle service ownership</span>
+          <span class="trust-sep"></span>
+          <span class="trust-item">After hours: AI agents &amp; LLM products</span>
+        </div>
+        <div class="marquee" role="img" aria-label="Technologies: Java, Spring Boot, Docker, Kubernetes, OpenShift, Oracle, Python, FastAPI, PostgreSQL, React, TypeScript and more">
+          <div class="marquee-row"><div class="marquee-track"><span class="tech"><i class="devicon-java-plain"></i>Java</span><span class="tech"><i class="devicon-spring-plain"></i>Spring Boot</span><span class="tech"><i class="devicon-docker-plain"></i>Docker</span><span class="tech"><i class="devicon-kubernetes-plain"></i>Kubernetes</span><span class="tech"><i class="devicon-redhat-plain"></i>OpenShift</span><span class="tech"><i class="devicon-oracle-original"></i>Oracle SQL</span><span class="tech"><i class="devicon-mysql-plain"></i>MySQL</span><span class="tech"><i class="devicon-githubactions-plain"></i>GitHub Actions</span><span class="tech"><i class="devicon-maven-plain"></i>Maven</span><span class="tech"><i class="devicon-azure-plain"></i>Azure</span><span class="tech"><i class="fa-solid fa-magnifying-glass-chart"></i>Splunk</span><span class="tech"><i class="fa-solid fa-gauge-high"></i>Dynatrace</span></div></div>
+          <div class="marquee-row reverse"><div class="marquee-track"><span class="tech"><i class="devicon-python-plain"></i>Python</span><span class="tech"><i class="devicon-fastapi-plain"></i>FastAPI</span><span class="tech"><i class="devicon-sqlalchemy-plain"></i>SQLAlchemy</span><span class="tech"><i class="devicon-postgresql-plain"></i>PostgreSQL</span><span class="tech"><i class="devicon-react-original"></i>React</span><span class="tech"><i class="devicon-typescript-plain"></i>TypeScript</span><span class="tech"><i class="devicon-nodejs-plain"></i>Node.js</span><span class="tech"><i class="devicon-playwright-plain"></i>Playwright</span><span class="tech"><i class="devicon-supabase-plain"></i>Supabase</span><span class="tech"><i class="devicon-vercel-original"></i>Vercel</span><span class="tech"><i class="fa-solid fa-wand-magic-sparkles"></i>Claude API</span><span class="tech"><i class="devicon-git-plain"></i>Git</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Selected work (case studies) ───────────── -->
+    <section class="section" id="work">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">01 — Selected work</span>
+          <h2 class="section-title">Problems I owned, <em>end to end.</em></h2>
+          <p class="section-sub">More than a list of tickets: what the problem was, what I was responsible for, and
+            what changed because of it.</p>
+        </header>
+
+        <div class="cases">
+          <!-- Featured case -->
+          <article class="case case-featured reveal spot">
+            <div class="case-main">
+              <div class="case-tags">
+                <span class="tag">Microservices</span>
+                <span class="tag">Ownership</span>
+                <span class="tag tag-quiet">Bank of America</span>
+              </div>
+              <h3 class="case-title">Running Spring Boot services at a million requests a day</h3>
+
+              <dl class="case-story">
+                <div>
+                  <dt>Context</dt>
+                  <dd>Bank of America runs backend services that take ~1 million requests a day. They have to stay
+                    fast, resilient and secure in a regulated environment.</dd>
+                </div>
+                <div>
+                  <dt>What I owned</dt>
+                  <dd>Full lifecycle of my services: system design, REST API development, testing and code reviews, then
+                    Docker containerisation, CI/CD deployment to OpenShift and production support. I work in an Agile
+                    team alongside product and QA.</dd>
+                </div>
+                <div>
+                  <dt>Outcome</dt>
+                  <dd>Services that handle ~1M requests a day, fall back gracefully when dependencies fail, and
+                    pass external security audits with zero findings.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="case-side">
+              <div class="big-stat">
+                <span class="big-num">~1<small>M</small></span>
+                <span class="big-label">requests / day</span>
+              </div>
+              <!-- Simple architecture diagram -->
+              <svg class="arch" viewBox="0 0 280 170" role="img"
+                aria-label="Diagram: client traffic through a REST API layer to Spring Boot services protected by retries and circuit breakers, backed by Oracle">
+                <rect x="4" y="66" width="56" height="38" rx="8" class="arch-gw" />
+                <text x="32" y="89" class="arch-txt" text-anchor="middle">clients</text>
+                <path id="cp0" d="M62 85 H86" class="arch-arrow" marker-end="url(#ah)" />
+                <rect x="90" y="66" width="56" height="38" rx="8" class="arch-gw" />
+                <text x="118" y="89" class="arch-txt" text-anchor="middle">REST API</text>
+                <path id="cp1" d="M148 85 C166 85 166 30 184 30" class="arch-line flow" />
+                <path id="cp2" d="M148 85 C166 85 166 85 184 85" class="arch-line flow" />
+                <path id="cp3" d="M148 85 C166 85 166 140 184 140" class="arch-line flow" />
+                <g class="arch-svc">
+                  <rect x="186" y="16" width="90" height="28" rx="7" />
+                  <rect x="186" y="71" width="90" height="28" rx="7" />
+                  <rect x="186" y="126" width="90" height="28" rx="7" />
+                </g>
+                <text x="231" y="34" class="arch-txt" text-anchor="middle">svc · retry</text>
+                <text x="231" y="89" class="arch-txt" text-anchor="middle">svc · breaker</text>
+                <text x="231" y="144" class="arch-txt" text-anchor="middle">svc · oracle</text>
+                <text x="118" y="128" class="arch-txt arch-dim" text-anchor="middle">OpenShift (k8s)</text>
+                <text x="118" y="142" class="arch-txt arch-dim" text-anchor="middle">Splunk · Dynatrace</text>
+                <g class="arch-packets"><circle r="2.6" class="arch-packet"><animateMotion dur="1.2s" begin="0s" repeatCount="indefinite"><mpath href="#cp0" /></animateMotion></circle><circle r="2.6" class="arch-packet"><animateMotion dur="1.6s" begin="-1.3s" repeatCount="indefinite"><mpath href="#cp1" /></animateMotion></circle><circle r="2.6" class="arch-packet"><animateMotion dur="1.6s" begin="-0.7s" repeatCount="indefinite"><mpath href="#cp2" /></animateMotion></circle><circle r="2.6" class="arch-packet"><animateMotion dur="1.6s" begin="-1.1s" repeatCount="indefinite"><mpath href="#cp3" /></animateMotion></circle></g>
+                <defs>
+                  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                    orient="auto-start-reverse">
+                    <path d="M0 0 L10 5 L0 10 z" class="arch-head" />
+                  </marker>
+                </defs>
+              </svg>
+              <div class="stack">Java · Spring Boot · REST · Docker · OpenShift</div>
+            </div>
+          </article>
+
+          <article class="case reveal spot">
+            <div class="case-tags"><span class="tag">Resilience</span><span class="tag">Distributed systems</span></div>
+            <h3 class="case-title">Making service-to-service calls fail gracefully</h3>
+            <p class="case-body">In a microservice system, one slow dependency can take down everything that calls it.
+              I added retry mechanisms and circuit breakers so transient faults get absorbed and persistent ones fail
+              fast instead of spreading.</p>
+            <ul class="case-results">
+              <li><b>Retries</b> for transient faults</li>
+              <li><b>Circuit breakers</b> against cascades</li>
+            </ul>
+          </article>
+
+          <article class="case reveal spot">
+            <div class="case-tags"><span class="tag">Performance</span><span class="tag">Data</span></div>
+            <h3 class="case-title">Speeding up the data layer</h3>
+            <p class="case-body">Found slow paths in Oracle and fixed them at three levels: rewrote queries,
+              restructured indexes and adjusted schemas. The fixes came from measured bottlenecks, not guesses.</p>
+            <ul class="case-results">
+              <li><b>60%</b> faster data retrieval</li>
+            </ul>
+          </article>
+
+          <article class="case reveal spot">
+            <div class="case-tags"><span class="tag">Reliability</span><span class="tag">Observability</span></div>
+            <h3 class="case-title">Production support that finds the real cause</h3>
+            <p class="case-body">Used Splunk and Dynatrace to analyse logs, investigate production incidents and pin
+              down performance bottlenecks, then drove the root-cause analysis so the same failure doesn't come back.
+            </p>
+            <ul class="case-results">
+              <li><b>Splunk</b> logs</li>
+              <li><b>Dynatrace</b> APM</li>
+              <li><b>RCA</b> on incidents</li>
+            </ul>
+          </article>
+
+          <article class="case reveal spot">
+            <div class="case-tags"><span class="tag">Security</span><span class="tag">Compliance</span></div>
+            <h3 class="case-title">Keeping owned services audit-clean</h3>
+            <p class="case-body">In a regulated bank, security is part of the definition of done. Every service I
+              own has come through external security audits without a single finding.</p>
+            <ul class="case-results">
+              <li><b>0</b> external audit findings</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── How I operate (senior signals) ───────────── -->
+    <section class="section section-alt" id="ownership">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">02 — How I operate</span>
+          <h2 class="section-title">Scope beyond <em>my own tickets.</em></h2>
+          <p class="section-sub">An SDE II adds judgement and leverage to the team. This is how that shows up in my
+            work today.</p>
+        </header>
+
+        <div class="principles">
+          <div class="principle reveal spot">
+            <span class="p-icon"><i class="fa-solid fa-route"></i></span>
+            <h3>Own the whole lifecycle</h3>
+            <p>Design, tests, code review, CI/CD and production support. I stay with what I ship after it merges.</p>
+          </div>
+          <div class="principle reveal spot">
+            <span class="p-icon"><i class="fa-solid fa-diagram-project"></i></span>
+            <h3>Design for failure</h3>
+            <p>I assume dependencies will fail: retries, circuit breakers and fault tolerance are part of the design
+              from the start, not patches after an outage.</p>
+          </div>
+          <div class="principle reveal spot">
+            <span class="p-icon"><i class="fa-solid fa-gauge-high"></i></span>
+            <h3>Measure, then optimise</h3>
+            <p>I start from logs, traces and execution plans. That's how the 60% data-layer improvement happened.</p>
+          </div>
+          <div class="principle reveal spot">
+            <span class="p-icon"><i class="fa-solid fa-people-group"></i></span>
+            <h3>Raise the team's bar</h3>
+            <p>Careful code reviews, RCAs the whole team learns from, and close work with product and QA so we ship
+              the right thing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Experience ───────────── -->
+    <section class="section" id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">03 — Experience</span>
+          <h2 class="section-title">Where I've <em>shipped.</em></h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="tl-item reveal">
+            <div class="tl-when mono">Jul 2023 — Present</div>
+            <div class="tl-body">
+              <h3>Software Development Engineer I <span class="at">@ Bank of America</span></h3>
+              <p class="tl-loc">Hyderabad, India</p>
+              <ul>
+                <li>Design, build and operate Spring Boot microservices and REST APIs handling ~1 million requests a
+                  day, containerised with Docker and deployed on OpenShift (Kubernetes).</li>
+                <li>Own services across the full SDLC: system design, testing, code reviews, CI/CD and production
+                  support, in an Agile team with product and QA.</li>
+                <li>Implemented retries and circuit breakers to make microservices more resilient and reliable.</li>
+                <li>Optimised Oracle queries, indexes and schemas for 60% faster data retrieval.</li>
+                <li>Drive incident investigation and root-cause analysis with Splunk and Dynatrace. Owned services have
+                  zero findings in external security audits.</li>
+              </ul>
+              <div class="chips"><span>Java</span><span>Spring Boot</span><span>REST</span><span>Docker</span><span>OpenShift</span><span>Oracle</span><span>Splunk</span><span>Dynatrace</span></div>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <div class="tl-when mono">Jan — Jun 2023</div>
+            <div class="tl-body">
+              <h3>Software Developer Intern <span class="at">@ Incedo Inc.</span></h3>
+              <p class="tl-loc">Gurugram, India</p>
+              <ul>
+                <li>Built CI/CD pipelines in GitHub Actions for automated build validation, testing and deployment.
+                  Deployment time went from 45 to 8 minutes.</li>
+                <li>Developed data-processing and ingestion pipelines handling 50,000+ financial records a day, and
+                  improved ingestion performance.</li>
+              </ul>
+              <div class="chips"><span>ASP.NET Core</span><span>Python</span><span>GitHub Actions</span><span>Dash</span><span>Plotly</span></div>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <div class="tl-when mono">2019 — 2023</div>
+            <div class="tl-body">
+              <h3>B.Tech, Computer Science &amp; Engineering <span class="at">@ VIT Vellore</span></h3>
+              <p class="tl-loc">CGPA 8.4 / 10</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───────────── Projects ───────────── -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">04 — Projects</span>
+          <h2 class="section-title">Built for fun, <em>engineered for real.</em></h2>
+          <p class="section-sub">After hours I build AI agents and full-stack products. I hold them to the same bar as
+            production: idempotent jobs, cost guardrails, graceful fallbacks and evals.</p>
+        </header>
+
+        <!-- Featured: ColdEmailAgent -->
+        <article class="project project-featured reveal spot">
+          <div class="pf-main">
+            <div class="project-top">
+              <span class="project-kind mono">Backend · AI agent · Python</span>
+              <a href="https://github.com/shivam24-2000/ColdEmailAgent" target="_blank" rel="noopener"
+                class="project-link" aria-label="ColdEmailAgent on GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <h3>ColdEmailAgent — autonomous outreach pipeline</h3>
+            <p>An AI agent that runs job outreach from start to finish. It finds the right contact at a company, drafts
+              a personalised email with Claude, queues it for my review, sends it through Gmail, then classifies
+              replies and schedules follow-ups.</p>
+            <ul class="pf-points">
+              <li><b>Serverless-safe scheduling:</b> serverless functions can't keep a scheduler thread alive, so a
+                single idempotent <code>/cron/tick</code> endpoint reads job state from Postgres and runs whatever is
+                due. Leases stop overlapping ticks from running a job twice, and time budgets split long work across
+                ticks so each run stays inside Vercel's 300s limit.</li>
+              <li><b>Fallback chain for discovery:</b> Hunter.io first, then scraping the company's own pages, then
+                guessed email patterns checked against DNS MX records and the mail server (SMTP), so bounces are
+                caught before sending.</li>
+              <li><b>Guardrails:</b> an LLM spend ledger with a rolling budget cap, a daily send cap, and 1–3 minute
+                jitter between sends to protect sender reputation.</li>
+              <li><b>Measured, not vibes:</b> an eval harness runs the reply classifier against 37 hand-labelled
+                cases and reports accuracy, per-label precision and recall, and a confusion matrix.</li>
+            </ul>
+            <div class="chips"><span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>PostgreSQL</span><span>Claude API</span><span>Gmail API</span><span>React 19</span><span>Vercel</span></div>
+          </div>
+          <div class="pf-side">
+            <!-- Pipeline diagram -->
+            <svg class="arch" viewBox="0 0 260 250" role="img"
+              aria-label="Diagram: a cron tick acquires a lease and runs due jobs: discover contacts, draft with Claude, human review, send via Gmail, poll and classify replies, nudge or mark ghosted">
+              <rect x="70" y="6" width="120" height="30" rx="8" class="arch-gw" />
+              <text x="130" y="25" class="arch-txt" text-anchor="middle">/cron/tick · lease</text>
+              <path id="ep0" d="M130 38 V52" class="arch-arrow" marker-end="url(#ah2)" />
+              <g class="arch-svc">
+                <rect x="10" y="56" width="110" height="28" rx="7" />
+                <rect x="140" y="56" width="110" height="28" rx="7" />
+                <rect x="10" y="104" width="110" height="28" rx="7" />
+                <rect x="140" y="104" width="110" height="28" rx="7" />
+                <rect x="10" y="152" width="110" height="28" rx="7" />
+                <rect x="140" y="152" width="110" height="28" rx="7" />
+              </g>
+              <text x="65" y="74" class="arch-txt" text-anchor="middle">1 · discover</text>
+              <text x="195" y="74" class="arch-txt" text-anchor="middle">2 · draft (Claude)</text>
+              <text x="65" y="122" class="arch-txt" text-anchor="middle">3 · human review</text>
+              <text x="195" y="122" class="arch-txt" text-anchor="middle">4 · send (Gmail)</text>
+              <text x="65" y="170" class="arch-txt" text-anchor="middle">5 · classify reply</text>
+              <text x="195" y="170" class="arch-txt" text-anchor="middle">6 · nudge / ghost</text>
+              <path id="ep1" d="M122 70 H136" class="arch-line" marker-end="url(#ah2)" />
+              <path id="ep2" d="M195 86 C195 96 65 92 65 100" class="arch-line" marker-end="url(#ah2)" />
+              <path id="ep3" d="M122 118 H136" class="arch-line" marker-end="url(#ah2)" />
+              <path id="ep4" d="M195 134 C195 144 65 140 65 148" class="arch-line" marker-end="url(#ah2)" />
+              <path id="ep5" d="M122 166 H136" class="arch-line" marker-end="url(#ah2)" />
+              <rect x="14" y="206" width="232" height="32" rx="8" class="arch-old" />
+              <text x="130" y="226" class="arch-txt" text-anchor="middle">Postgres · job state · spend ledger</text>
+              <g class="arch-packets"><circle r="2.8" class="arch-packet" opacity="0"><animateMotion dur="4.2s" begin="0.0s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.143;1" calcMode="linear"><mpath href="#ep0" /></animateMotion><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.143;0.144;1" dur="4.2s" begin="0.0s" repeatCount="indefinite" /></circle><circle r="2.8" class="arch-packet" opacity="0"><animateMotion dur="4.2s" begin="0.6s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.143;1" calcMode="linear"><mpath href="#ep1" /></animateMotion><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.143;0.144;1" dur="4.2s" begin="0.6s" repeatCount="indefinite" /></circle><circle r="2.8" class="arch-packet" opacity="0"><animateMotion dur="4.2s" begin="1.2s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.143;1" calcMode="linear"><mpath href="#ep2" /></animateMotion><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.143;0.144;1" dur="4.2s" begin="1.2s" repeatCount="indefinite" /></circle><circle r="2.8" class="arch-packet" opacity="0"><animateMotion dur="4.2s" begin="1.8s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.143;1" calcMode="linear"><mpath href="#ep3" /></animateMotion><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.143;0.144;1" dur="4.2s" begin="1.8s" repeatCount="indefinite" /></circle><circle r="2.8" class="arch-packet" opacity="0"><animateMotion dur="4.2s" begin="2.4s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.143;1" calcMode="linear"><mpath href="#ep4" /></animateMotion><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.143;0.144;1" dur="4.2s" begin="2.4s" repeatCount="indefinite" /></circle><circle r="2.8" class="arch-packet" opacity="0"><animateMotion dur="4.2s" begin="3.0s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.143;1" calcMode="linear"><mpath href="#ep5" /></animateMotion><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.143;0.144;1" dur="4.2s" begin="3.0s" repeatCount="indefinite" /></circle></g>
+              <defs>
+                <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                  orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" class="arch-head" />
+                </marker>
+              </defs>
+            </svg>
+            <ul class="checks checks-card">
+              <li><i class="fa-solid fa-check"></i><span>Idempotent, lease-guarded jobs</span></li>
+              <li><i class="fa-solid fa-check"></i><span>LLM cost budget enforced in code</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Eval harness for the AI classifier</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="projects projects-2">
+          <article class="project reveal spot">
+            <div class="project-top">
+              <span class="project-kind mono">Real-time · AI · Full-stack</span>
+              <span class="project-links">
+                <a href="https://nexcode-ai.vercel.app/" target="_blank" rel="noopener" class="project-link"
+                  aria-label="NexCode AI live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/shivam24-2000/AI-Powered-Coding-Interview-Preparation-Platform-with-Real-Time-Code-Analysis"
+                  target="_blank" rel="noopener" class="project-link" aria-label="NexCode AI on GitHub"><i
+                    class="fa-brands fa-github"></i></a>
+              </span>
+            </div>
+            <h3>NexCode AI — interview prep platform</h3>
+            <p>A coding-interview workspace with a Monaco editor, real-time complexity analysis, an AI video mock
+              interviewer that asks follow-ups about your code, and peer sessions over WebRTC.</p>
+            <div class="project-insight">
+              <span class="mono">Engineering</span>
+              AI calls go through serverless API routes, so the key stays on the server. A central quota manager
+              handles rate limits, and when the model is throttled or fails, analysis falls back to local heuristics
+              so the session keeps working.
+            </div>
+            <div class="chips"><span>React</span><span>TypeScript</span><span>Supabase</span><span>WebRTC</span><span>Gemini API</span><span>Vercel</span></div>
+            <a href="https://nexcode-ai.vercel.app/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm pf-link">
+              Live demo <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+
+          <article class="project reveal spot">
+            <div class="project-top">
+              <span class="project-kind mono">Mobile · Scraping · Node</span>
+              <a href="https://github.com/shivam24-2000/smart-cart" target="_blank" rel="noopener" class="project-link"
+                aria-label="SmartCart on GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <h3>SmartCart — grocery price comparison</h3>
+            <p>A React Native app that compares prices across Blinkit, Zepto, Swiggy Instamart and BigBasket for your
+              pincode, and tracks price history and flash deals.</p>
+            <div class="project-insight">
+              <span class="mono">Engineering</span>
+              An Express backend uses Playwright to scrape quick-commerce prices and serves them as JSON APIs. A
+              split-cart optimiser works out which combination of stores gives the cheapest basket.
+            </div>
+            <div class="chips"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Node.js</span><span>Playwright</span><span>Supabase</span></div>
+          </article>
+        </div>
+
+        <div class="more-projects reveal">
+          <span class="trust-label">More on GitHub</span>
+          <a href="https://github.com/shivam24-2000/Movies_Backend_Services" target="_blank" rel="noopener"
+            class="mp-item">
+            <span><b>Movies Backend Services</b> + <b>JWT Auth</b> · REST APIs with token-based authorization</span>
+            <span class="mono">C# · ASP.NET Core · EF <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="https://github.com/shivam24-2000/Image-Steganography" target="_blank" rel="noopener" class="mp-item">
+            <span><b>Image Steganography</b> · hide and recover messages inside images</span>
+            <span class="mono">Python <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="https://github.com/shivam24-2000/Trekr" target="_blank" rel="noopener" class="mp-item">
+            <span><b>Trekr</b> · iOS travel tracker</span>
+            <span class="mono">Swift <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="https://github.com/shivam24-2000?tab=repositories" target="_blank" rel="noopener" class="mp-item">
+            <span><b>Machine learning &amp; computer vision</b> · emotion recognition, gesture control, toxicity
+              detection and more</span>
+            <span class="mono">30+ repos <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
           </a>
         </div>
-
-        <!-- Right: 3D Globe -->
-        <div class="hero-3d-col">
-          <div id="hero-globe-canvas" class="hero-globe-wrap"></div>
-        </div>
-      </div>
-
-      <div class="scroll-indicator">
-        <span>Scroll Down</span>
-        <div class="mouse">
-          <div class="wheel"></div>
-        </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about-section">
+    <!-- ───────────── Toolkit ───────────── -->
+    <section class="section" id="toolkit">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title"><span class="number">01.</span> The Mission: Scaling Resilience</h2>
-          <div class="title-line"></div>
-        </div>
-        <p class="section-hook">I bridge the gap between <b>complex architecture</b> and <b>seamless user
-            experiences</b>, focusing on systems that move at the <b>speed of thought</b>.</p>
+        <header class="section-head reveal">
+          <span class="eyebrow">05 — Toolkit</span>
+          <h2 class="section-title">What I reach for.</h2>
+        </header>
 
-        <div class="about-grid">
-          <div class="about-text">
-            <p>I thrive at the intersection of system architecture and operational excellence. My approach focuses on
-              building scalable infrastructure that enables teams to move fast without sacrificing reliability.</p>
-            <p>I decompose monolithic systems into well-designed microservices. I optimize databases and APIs for scale.
-              I build observability systems that reduce incident response time. I automate toil away so teams can focus
-              on impact.</p>
-
-            <div class="skills-wrap">
-              <h3>Technical Arsenal</h3>
-              <div class="skills-categories">
-                <div class="skill-category">
-                  <span class="skill-cat-label"><i class="fa-solid fa-server"></i> Backend</span>
-                  <div class="skill-tags">
-                    <span class="skill-tag primary">Java</span>
-                    <span class="skill-tag primary">Spring Boot</span>
-                    <span class="skill-tag">ASP.NET Core</span>
-                    <span class="skill-tag">Python</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <span class="skill-cat-label"><i class="fa-brands fa-docker"></i> DevOps</span>
-                  <div class="skill-tags">
-                    <span class="skill-tag primary">Docker</span>
-                    <span class="skill-tag primary">Kubernetes</span>
-                    <span class="skill-tag">OpenShift</span>
-                    <span class="skill-tag">CI/CD</span>
-                    <span class="skill-tag">GitHub Actions</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <span class="skill-cat-label"><i class="fa-solid fa-database"></i> Data</span>
-                  <div class="skill-tags">
-                    <span class="skill-tag primary">Oracle SQL</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">Supabase</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <span class="skill-cat-label"><i class="fa-solid fa-chart-line"></i> Observability</span>
-                  <div class="skill-tags">
-                    <span class="skill-tag primary">Splunk</span>
-                    <span class="skill-tag">Distributed Tracing</span>
-                    <span class="skill-tag">Alerting</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <span class="skill-cat-label"><i class="fa-solid fa-mobile-screen"></i> Frontend / Mobile</span>
-                  <div class="skill-tags">
-                    <span class="skill-tag">Next.js</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">Swift</span>
-                    <span class="skill-tag">SwiftUI</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <span class="skill-cat-label"><i class="fa-solid fa-robot"></i> AI / ML</span>
-                  <div class="skill-tags">
-                    <span class="skill-tag">Claude API</span>
-                    <span class="skill-tag">LLM Integration</span>
-                    <span class="skill-tag">WebRTC</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="toolkit reveal">
+          <div class="tk-row">
+            <span class="tk-label">Languages</span>
+            <div class="tk-items"><span class="core">Java</span><span class="core">SQL</span><span>Python</span><span>TypeScript</span><span>C++</span><span>C#</span></div>
           </div>
-
-          <div class="about-stats-bento">
-            <div class="bento-box">
-              <span class="bento-number count-up" data-count="27">0</span>
-              <span class="bento-label">Repositories</span>
-            </div>
-            <div class="bento-box">
-              <span class="bento-number">10+</span>
-              <span class="bento-label">Microservices Built</span>
-            </div>
-            <div class="bento-box long">
-              <span class="bento-number">90%</span>
-              <span class="bento-label">Deployment Time Reduced</span>
-            </div>
-            <div class="bento-box long">
-              <span class="bento-number">Scalability</span>
-              <span class="bento-label">&lt;1M Requests / Day</span>
-            </div>
+          <div class="tk-row">
+            <span class="tk-label">Backend &amp; frameworks</span>
+            <div class="tk-items"><span class="core">Spring Boot</span><span class="core">REST APIs</span><span class="core">Microservices</span><span>Spring MVC</span><span>JPA</span><span>Maven</span></div>
           </div>
-        </div>
-
-
-        <!-- Terminal Easter Egg -->
-        <div class="terminal-container" data-tilt>
-          <div class="terminal-header">
-            <div class="terminal-dots"><span></span><span></span><span></span></div>
-            <div class="terminal-title">guest@shivamsinghal:~</div>
+          <div class="tk-row">
+            <span class="tk-label">Distributed systems</span>
+            <div class="tk-items"><span class="core">System Design</span><span>Scalability</span><span>Retries &amp; Circuit Breakers</span><span>Concurrency</span><span>Multithreading</span></div>
           </div>
-          <div class="terminal-body" id="terminal-history">
-            <div class="terminal-line"><span class="term-prompt">guest@shivam:~$</span> <span
-                class="term-cmd">./start.sh</span></div>
-            <div class="terminal-line output">System initialized. Type <span
-                style="color:var(--accent-primary)">'help'</span> to see available commands.</div>
+          <div class="tk-row">
+            <span class="tk-label">Databases</span>
+            <div class="tk-items"><span class="core">Oracle SQL</span><span>MySQL</span><span>Query Optimization</span><span>Indexing</span><span>Data Modeling</span></div>
           </div>
-          <div class="terminal-input-line">
-            <span class="term-prompt">guest@shivam:~$</span>
-            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" maxlength="50">
+          <div class="tk-row">
+            <span class="tk-label">Cloud &amp; DevOps</span>
+            <div class="tk-items"><span class="core">Docker</span><span class="core">Kubernetes</span><span>OpenShift</span><span>CI/CD</span><span>GitHub Actions</span><span>Azure</span></div>
+          </div>
+          <div class="tk-row">
+            <span class="tk-label">Observability</span>
+            <div class="tk-items"><span class="core">Splunk</span><span class="core">Dynatrace</span><span>Monitoring</span><span>Incident Response</span><span>Root-Cause Analysis</span></div>
+          </div>
+          <div class="tk-row">
+            <span class="tk-label">Fundamentals</span>
+            <div class="tk-items"><span>Data Structures &amp; Algorithms</span><span>OOP</span><span>Design Patterns</span><span>SOLID</span><span>Code Reviews</span><span>Agile</span></div>
+          </div>
+          <div class="tk-row">
+            <span class="tk-label">Side projects</span>
+            <div class="tk-items"><span>FastAPI</span><span>SQLAlchemy</span><span>PostgreSQL</span><span>Claude API</span><span>Gemini API</span><span>React</span><span>React Native</span><span>Node.js</span><span>Playwright</span><span>Supabase</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section experience-section">
+    <!-- ───────────── Contact ───────────── -->
+    <section class="section contact" id="contact">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title"><span class="number">02.</span> The Journey: Professional Growth</h2>
-          <div class="title-line"></div>
-        </div>
-        <p class="section-hook">From <b>high-stakes banking</b> platforms to <b>rapid internal tooling</b>, here's where
-          I've turned <b>architectural theory</b> into <b>enterprise reality</b>.</p>
+        <div class="contact-card reveal">
+          <span class="status-pill status-static"><span class="pulse"></span> Available · open to relocation</span>
+          <h2 class="contact-title">Need someone to <em>own</em><br> your next backend service?</h2>
+          <p class="contact-sub">I'm looking for SDE II / Senior Backend roles where I can own services through their
+            whole lifecycle: design, delivery and operations.</p>
 
-        <div class="exp-wrapper">
-          <!-- Left: Company Selector Tabs -->
-          <div class="exp-tabs">
-            <div class="exp-tab active" data-tab="boa">
-              <div class="exp-tab-indicator"></div>
-              <div class="exp-tab-content">
-                <span class="exp-tab-company">Bank of America</span>
-                <span class="exp-tab-role">SDE I</span>
-                <span class="exp-tab-period">2023 – Present</span>
-              </div>
-            </div>
-            <div class="exp-tab" data-tab="incedo">
-              <div class="exp-tab-indicator"></div>
-              <div class="exp-tab-content">
-                <span class="exp-tab-company">Incedo Inc.</span>
-                <span class="exp-tab-role">Intern</span>
-                <span class="exp-tab-period">Jan – Jun 2023</span>
-              </div>
-            </div>
+          <div class="contact-actions">
+            <button class="btn btn-primary btn-lg" id="copy-email" data-email="shivamsinghal24@gmail.com">
+              <i class="fa-regular fa-copy"></i> <span>shivamsinghal24@gmail.com</span>
+            </button>
+            <a href="/resume.pdf?v=3" download="Shivam_Singhal_Resume.pdf" class="btn btn-ghost btn-lg"><i
+                class="fa-solid fa-arrow-down"></i> Download resume</a>
           </div>
 
-          <!-- Right: Details Panels -->
-          <div class="exp-panels">
-            <!-- Bank of America -->
-            <div class="exp-panel active" id="exp-boa">
-              <div class="exp-panel-top">
-                <div class="exp-live-badge">
-                  <span class="live-dot"></span> Full-Time
-                </div>
-                <h3 class="exp-panel-role">Software Development Engineer I</h3>
-                <div class="exp-panel-sub">
-                  <span><i class="fa-solid fa-building"></i> Bank of America</span>
-                  <span><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
-                  <span><i class="fa-solid fa-calendar-days"></i> Jul 2023 – Present</span>
-                </div>
-              </div>
-
-              <!-- Metrics Summary Grid -->
-              <div class="exp-metrics">
-                <div class="exp-metric">
-                  <span class="exp-metric-val">10<span class="exp-metric-unit">+</span></span>
-                  <span class="exp-metric-label">Microservices Built</span>
-                </div>
-                <div class="exp-metric">
-                  <span class="exp-metric-val">90<span class="exp-metric-unit">%</span></span>
-                  <span class="exp-metric-label">Faster Deployments</span>
-                </div>
-                <div class="exp-metric">
-                  <span class="exp-metric-val">60<span class="exp-metric-unit">%</span></span>
-                  <span class="exp-metric-label">Query Latency &darr;</span>
-                </div>
-                <div class="exp-metric">
-                  <span class="exp-metric-val">40<span class="exp-metric-unit">%</span></span>
-                  <span class="exp-metric-label">MTTD Improvement</span>
-                </div>
-              </div>
-
-              <!-- Bullet points -->
-              <ul class="exp-bullets">
-                <li><span class="hl">Microservices Architecture:</span> Architected and deployed 10+ Spring Boot
-                  microservices, reducing deployment lead time from 4 hours to 40 minutes. Implemented containerized
-                  OpenShift pipelines with automated health checks.</li>
-                <li><span class="hl">Legacy Modernization:</span> Migrated 6 legacy Spring MVC monoliths to Spring Boot
-                  + Docker microservices, reducing maintenance overhead by 45% and eliminating manual interventions.
-                </li>
-                <li><span class="hl">Database Optimization:</span> Optimized critical Oracle SQL queries through plan
-                  execution analysis and index restructure, reducing latency from 800ms to 320ms for fast dashboard
-                  loads.</li>
-                <li><span class="hl">Observability & Response:</span> Designed Splunk alerting frameworks raising
-                  anomaly detections by 40% and MTTR by 35%. Resolved 20+ critical incident productions successfully.
-                </li>
-                <li><span class="hl">Infrastructure Automation:</span> Containerized legacy AutoSys batch scheduling to
-                  OpenShift cutting overheads by 80% with self-healing releases.</li>
-                <li><span class="hl">Security compliance:</span> Remediated 50+ CVE vulnerabilities in Spring Boot
-                  dependencies and pipeline streams.</li>
-              </ul>
-
-              <div class="exp-tech-stack">
-                <span>Spring
-                  Boot</span><span>Java</span><span>Docker</span><span>OpenShift</span><span>Kubernetes</span><span>Oracle
-                  SQL</span><span>Splunk</span><span>CI/CD</span>
-              </div>
-            </div>
-
-            <!-- Incedo Inc -->
-            <div class="exp-panel" id="exp-incedo">
-              <div class="exp-panel-top">
-                <div class="exp-intern-badge">
-                  <i class="fa-solid fa-graduation-cap"></i> Intern
-                </div>
-                <h3 class="exp-panel-role">Software Developer Intern</h3>
-                <div class="exp-panel-sub">
-                  <span><i class="fa-solid fa-building"></i> Incedo Inc.</span>
-                  <span><i class="fa-solid fa-location-dot"></i> Gurugram, India</span>
-                  <span><i class="fa-solid fa-calendar-days"></i> Jan – Jun 2023</span>
-                </div>
-              </div>
-
-              <!-- Metrics Grid -->
-              <div class="exp-metrics">
-                <div class="exp-metric">
-                  <span class="exp-metric-val">82<span class="exp-metric-unit">%</span></span>
-                  <span class="exp-metric-label">Deploy Cycle Speedup</span>
-                </div>
-                <div class="exp-metric">
-                  <span class="exp-metric-val">10<span class="exp-metric-unit">d</span></span>
-                  <span class="exp-metric-label">Reduced Release Cycles</span>
-                </div>
-                <div class="exp-metric">
-                  <span class="exp-metric-val">&lt;2<span class="exp-metric-unit">s</span></span>
-                  <span class="exp-metric-label">Data Viz Latency</span>
-                </div>
-              </div>
-
-              <ul class="exp-bullets">
-                <li><span class="hl">Backend API Development:</span> Built 8 backend APIs with ASP.NET Core for
-                  portfolio management platform with 100% test coverage. Reduced release cycles from 14 days to 10 days.
-                </li>
-                <li><span class="hl">CI/CD Automation:</span> Engineered automated CI/CD pipeline via GitHub Actions,
-                  reducing deploy cycle from 45 min to 8 min (82% faster).</li>
-                <li><span class="hl">Data Visualization:</span> Built real-time financial dashboards with Dash + Plotly
-                  processing 50K+ daily data points at low latencies.</li>
-              </ul>
-
-              <div class="exp-tech-stack">
-                <span>ASP.NET Core</span><span>GitHub
-                  Actions</span><span>Python</span><span>Dash</span><span>Plotly</span><span>CI/CD</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section education-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title"><span class="number">03.</span> Education & Certifications</h2>
-          <div class="title-line"></div>
-        </div>
-
-        <div class="edu-timeline">
-          <!-- Degree -->
-          <div class="edu-card">
-            <div class="edu-card-accent"></div>
-            <div class="edu-card-body">
-              <div class="edu-badge"><i class="fa-solid fa-graduation-cap"></i> Degree</div>
-              <h3 class="edu-degree">B.Tech in Computer Science & Engineering</h3>
-              <div class="edu-meta">
-                <span><i class="fa-solid fa-building-columns"></i> Vellore Institute Of Technology</span>
-                <span><i class="fa-solid fa-calendar-days"></i> 2019 – 2023</span>
-                <span><i class="fa-solid fa-star"></i> 8.4/10 CGPA</span>
-                <span><i class="fa-solid fa-location-dot"></i> India</span>
-              </div>
-              <p class="edu-desc">Relevant coursework: Data Structures & Algorithms, Distributed Systems, Database
-                Management, Operating Systems, Computer Networks, Software Engineering</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title"><span class="number">04.</span> The Experiments: Engineering Impact</h2>
-          <div class="title-line"></div>
-        </div>
-        <p class="section-hook">Breaking boundaries with <b>AI integration</b>, <b>real-time networking</b>, and
-          <b>high-performance</b> system design.
-        </p>
-
-        <div class="projects-list">
-          <!-- Project 1 -->
-          <div class="project-card" data-tilt>
-            <div class="project-content">
-              <span class="project-tag">System Architecture / AI</span>
-              <h3 class="project-card-title">AI Interview Prep Platform</h3>
-              <p class="project-card-desc">Engineered a real-time interviewer matching system with Next.js + Supabase +
-                WebRTC for P2P video feeds and Claude AI integration as 'Friday' mentor for real-time complexity
-                analysis. Supports live sandbox execution of JS, Java, Python, C++.</p>
-
-              <div class="project-tech">
-                <span>Next.js</span>
-                <span>Supabase</span>
-                <span>WebRTC</span>
-                <span>Claude API</span>
-                <span>TypeScript</span>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/shivam24-2000/AI-Powered-Coding-Interview-Preparation-Platform-with-Real-Time-Code-Analysis"
-                  target="_blank">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="project-mockup mac-mockup">
-              <div class="mockup-header"><i></i><i></i><i></i></div>
-              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
-                alt="AI Interview Platform dashboard view" loading="lazy">
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-card" data-tilt>
-            <div class="project-content">
-              <span class="project-tag">Swift / native iOS</span>
-              <h3 class="project-card-title">Trekr | Travel Tracking</h3>
-              <p class="project-card-desc">Native iOS travel companion app with GPS tracking, offline-first syncing to
-                Supabase, custom MapKit tile caching for low energy footprint (&lt;5% battery drain). Handles
-                conflict-free syncing of 1000+ coordinates.</p>
-
-              <div class="project-tech">
-                <span>Swift</span>
-                <span>SwiftUI</span>
-                <span>CoreLocation</span>
-                <span>MapKit</span>
-                <span>Supabase</span>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/shivam24-2000/Trekr" target="_blank">View on GitHub <i
-                    class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="project-mockup ios-mockup">
-              <div class="mockup-notch"></div>
-              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=300&q=80"
-                alt="Trekr iOS Application Interface on Phone" loading="lazy">
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-card" data-tilt>
-            <div class="project-content">
-              <span class="project-tag">IoT / Firmware</span>
-              <h3 class="project-card-title">Weather Monitoring Station</h3>
-              <p class="project-card-desc">C++ Arduino IoT system aggregating MQTT updates batch publishing buffers to
-                reduce bandwidth & extend battery life to 7 days. Designed edge analytics streaming to cloud dashboards
-                at &lt;2s latency with minimal RAM footprint.</p>
-
-              <div class="project-tech">
-                <span>C++</span>
-                <span>Arduino</span>
-                <span>MQTT</span>
-                <span>ESP8266</span>
-                <span>IoT</span>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/shivam24-2000/Weather-Montoring-Station" target="_blank">View on GitHub <i
-                    class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="project-mockup mac-mockup">
-              <div class="mockup-header"><i></i><i></i><i></i></div>
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
-                alt="Custom IoT Dashboard layout graphs" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Open to Work Section — Enhanced for Recruiters -->
-    <section id="open-to-work" class="section open-to-work-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title"><span class="number">05.</span> Open to Work</h2>
-          <div class="title-line"></div>
-        </div>
-
-        <!-- TL;DR Recruiter Card -->
-        <div class="recruiter-tldr">
-          <div class="tldr-header">
-            <span class="tldr-badge"><span class="live-dot"></span> Actively Looking</span>
-            <h3 class="tldr-title">TL;DR for Recruiters</h3>
-          </div>
-
-          <div class="tldr-highlights">
-            <div class="tldr-stat">
-              <span class="tldr-number">3+</span>
-              <span class="tldr-label">Years Enterprise Experience</span>
-            </div>
-            <div class="tldr-stat">
-              <span class="tldr-number">10+</span>
-              <span class="tldr-label">Microservices Shipped</span>
-            </div>
-            <div class="tldr-stat">
-              <span class="tldr-number">90%</span>
-              <span class="tldr-label">Deployment Speedup</span>
-            </div>
-            <div class="tldr-stat">
-              <span class="tldr-number">&lt;1M</span>
-              <span class="tldr-label">Requests/Day Handled</span>
-            </div>
-          </div>
-
-          <div class="tldr-details">
-            <div class="tldr-detail-item">
-              <span class="tldr-detail-label"><i class="fa-solid fa-bullseye"></i> Target Role</span>
-              <span class="tldr-detail-value">SDE-II / Senior Backend/Platform Engineer</span>
-            </div>
-            <div class="tldr-detail-item">
-              <span class="tldr-detail-label"><i class="fa-solid fa-code"></i> Core Focus</span>
-              <span class="tldr-detail-value">Microservices · Distributed Systems · DevOps</span>
-            </div>
-            <div class="tldr-detail-item">
-              <span class="tldr-detail-label"><i class="fa-solid fa-building"></i> Current</span>
-              <span class="tldr-detail-value">Bank of America — SDE I (3+ years)</span>
-            </div>
-            <div class="tldr-detail-item">
-              <span class="tldr-detail-label"><i class="fa-solid fa-location-dot"></i> Location</span>
-              <span class="tldr-detail-value">Hyderabad · Remote · Relocation OK</span>
-            </div>
-          </div>
-
-          <div class="tldr-actions">
-            <a href="/resume.pdf?v=2" download="Shivam_Singhal.pdf" class="btn btn-primary"><i
-                class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
-            <a href="mailto:shivamsinghal24@gmail.com" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i>
-              Email Me</a>
-            <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="btn btn-secondary"><i
+          <div class="contact-links">
+            <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" rel="noopener"><i
                 class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          </div>
-        </div>
-
-        <!-- What I'm Looking For -->
-        <div class="otw-narrative">
-          <p>I'm looking for opportunities to own the full service
-            lifecycle: architecture &rarr; deployment &rarr; operations. I'm drawn to roles where I can build scalable
-            systems and modernize legacy infrastructure.</p>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Contact Section — Enhanced -->
-    <section id="contact" class="section contact-section">
-      <div id="contact-canvas" class="section-3d-bg"></div>
-      <div class="container">
-        <div class="contact-box">
-          <h2 class="contact-title">Let's Connect</h2>
-          <p class="contact-desc">Ready to discuss how I can help scale your backend infrastructure or modernize your
-            legacy systems? I typically respond within <strong>24 hours</strong>.</p>
-
-
-
-          <div class="contact-methods">
-            <a href="mailto:shivamsinghal24@gmail.com" class="contact-method-card">
-              <i class="fa-solid fa-envelope"></i>
-              <div>
-                <strong>Email</strong>
-                <span>shivamsinghal24@gmail.com</span>
-              </div>
-            </a>
-            <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="contact-method-card">
-              <i class="fa-brands fa-linkedin"></i>
-              <div>
-                <strong>LinkedIn</strong>
-                <span>Connect professionally</span>
-              </div>
-            </a>
-            <a href="https://github.com/shivam24-2000" target="_blank" class="contact-method-card">
-              <i class="fa-brands fa-github"></i>
-              <div>
-                <strong>GitHub</strong>
-                <span>View my code</span>
-              </div>
-            </a>
+            <a href="https://github.com/shivam24-2000" target="_blank" rel="noopener"><i
+                class="fa-brands fa-github"></i> GitHub</a>
+            <a href="mailto:shivamsinghal24@gmail.com"><i class="fa-regular fa-envelope"></i> Email</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Sticky Recruiter CTA Bar -->
-  <div id="recruiter-bar" class="recruiter-bar">
-    <div class="recruiter-bar-inner">
-      <div class="recruiter-bar-status">
-        <span class="live-dot"></span>
-        <span>Open to Work</span>
-      </div>
-      <div class="recruiter-bar-actions">
-        <a href="/resume.pdf?v=2" download="Shivam_Singhal.pdf" class="rbar-btn rbar-resume"><i
-            class="fa-solid fa-file-arrow-down"></i> <span>Resume</span></a>
-        <a href="mailto:shivamsinghal24@gmail.com" class="rbar-btn rbar-email"><i class="fa-solid fa-envelope"></i>
-          <span>Email</span></a>
-        <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank" class="rbar-btn rbar-linkedin"><i
-            class="fa-brands fa-linkedin"></i> <span>LinkedIn</span></a>
-      </div>
-    </div>
-  </div>
-
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-inner">
-      <div>
-        <div class="footer-logo">Shivam<span class="logo-dot">.</span></div>
-        <p class="footer-tagline">Building fast, clean & scalable systems.</p>
-      </div>
-      <div class="footer-nav">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#open-to-work">Hire Me</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://github.com/shivam24-2000" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com/in/shivam-singhal-538369191/" target="_blank"><i
-            class="fa-brands fa-linkedin"></i></a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      Developed by <span class="footer-name"> Shivam Singhal</span>
+      <span>© <span id="year">2026</span> Shivam Singhal</span>
+      <span class="mono">Hand-built with Vite · no frameworks, no tracking</span>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-
-  <!-- ── Friday AI Chatbot Widget ──────────────────────────── -->
-  <button id="chatbot-toggle" aria-label="Open Friday AI assistant">
-    <i class="fa-solid fa-robot cb-toggle-icon cb-icon-open"></i>
-    <i class="fa-solid fa-xmark cb-toggle-icon cb-icon-close"></i>
-    <div id="chatbot-badge">1</div>
-  </button>
-
-  <div id="chatbot-panel" role="dialog" aria-label="Friday AI Chat">
-    <!-- Header -->
-    <div class="cb-header">
-      <div class="cb-header-avatar"><i class="fa-solid fa-robot"></i></div>
-      <div class="cb-header-info">
-        <div class="cb-header-name">Friday <span style="font-weight:400;color:var(--text-muted);font-size:0.8rem;">·
-            AI</span></div>
-        <div class="cb-header-status"><span class="cb-status-dot"></span> Online · Knows Shivam well</div>
-      </div>
-      <button id="chatbot-close" aria-label="Close chat"><i class="fa-solid fa-chevron-down"></i></button>
-    </div>
-
-    <!-- Quick Suggestion Chips -->
-    <div class="cb-chips">
-      <button class="cb-chip">📑 Get Resume</button>
-      <button class="cb-chip">His experience</button>
-      <button class="cb-chip">Projects built</button>
-      <button class="cb-chip">Available to hire?</button>
-      <button class="cb-chip">Tech stack</button>
-      <button class="cb-chip">Contact him</button>
-      <button class="cb-chip">Fun fact</button>
-      <button class="cb-chip">Tell me a joke</button>
-    </div>
-
-    <!-- Messages -->
-    <div id="chatbot-messages"></div>
-
-    <!-- Input -->
-    <div class="cb-footer">
-      <input type="text" id="chatbot-input" placeholder="Ask me about Shivam…" autocomplete="off" spellcheck="false"
-        maxlength="200" />
-      <button id="chatbot-send" aria-label="Send message">
-        <i class="fa-solid fa-paper-plane"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Preview Modal for What I'm building now -->
-  <div class="preview-modal" id="previewModal">
-    <div class="modal-overlay" id="modalOverlay"></div>
-    <div class="modal-content creative-modal">
-      <button class="modal-close" id="modalClose">&times;</button>
-
-      <div class="modal-split">
-        <!-- Left: Code Mockup Dashboard -->
-        <div class="modal-code-mockup">
-          <div class="terminal-header" style="background:#0b0c10; padding:12px 20px;">
-            <div class="terminal-dots"><span></span><span></span><span></span></div>
-            <div class="terminal-title" style="margin-right:0;">AI Interview Session</div>
-          </div>
-
-          <div class="mockup-body">
-            <div class="code-line"><span class="c-keyword">const</span> AI = <span class="c-keyword">new</span> <span
-                class="c-func">Matchmaker</span>({</div>
-            <div class="code-line indent">skills: <span class="c-string">["Java", "System Design"]</span>,</div>
-            <div class="code-line indent">timeout: <span class="c-string">"30s"</span></div>
-            <div class="code-line">});</div>
-            <div class="code-line">AI.<span class="c-func">startMatching</span>()</div>
-            <div class="code-line indent">.<span class="c-func">then</span>(session => {</div>
-            <div class="code-line indent-2">console.<span class="c-func">log</span>(<span class="c-string">"Mentor
-                'Friday' Connected"</span>);</div>
-            <div class="code-line indent">});</div>
-            <div class="ai-typing-indicator"><span></span><span></span><span></span></div>
-          </div>
-        </div>
-
-        <!-- Right: Detail Info Panel -->
-        <div class="modal-info" style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
-          <div class="modal-badge"><i class="fa-solid fa-microchip"></i> Next.js / Supabase / WebRTC</div>
-          <h2 class="modal-title">AI Interview Prep</h2>
-          <div class="modal-tagline">An interactive dashboard engineered with robust AI-driven interview simulation
-            environments.</div>
-
-          <ul class="creative-features">
-            <li><i class="fa-solid fa-brain"></i>
-              <div><strong>Real-Time AI Mentor</strong><span>Instant time/space feedback with dual-model
-                  failover.</span></div>
-            </li>
-            <li><i class="fa-solid fa-terminal"></i>
-              <div><strong>Virtual Execution</strong><span>Run JS, Java, Python, C++ via remote engine execution.</span>
-              </div>
-            </li>
-            <li><i class="fa-solid fa-microphone"></i>
-              <div><strong>Voice Assistance</strong><span>Talk to "Friday" natively via WebRTC dictation flows.</span>
-              </div>
-            </li>
-            <li><i class="fa-solid fa-users"></i>
-              <div><strong>P2P Mock Interviews</strong><span>Live video socket feeds powered by Supabase
-                  channels.</span></div>
-            </li>
-          </ul>
-
-          <a href="https://github.com/shivam24-2000/AI-Powered-Coding-Interview-Preparation-Platform-with-Real-Time-Code-Analysis"
-            target="_blank" class="btn btn-primary modal-action-btn"
-            style="margin-top:20px; text-align:center; justify-content:center;">
-            View Repository <i class="fa-brands fa-github"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
