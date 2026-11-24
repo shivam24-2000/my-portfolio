@@ -10,7 +10,7 @@
     content="Backend Software Engineer with 3+ years at Bank of America. Java, Spring Boot and microservices handling ~1M requests/day, owned end to end from system design to incident response. Open to SDE-II / Senior Backend roles." />
   <meta name="author" content="Shivam Singhal" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0a0b0d" />
+  <meta name="theme-color" content="#fbfbf9" />
   <link rel="canonical" href="https://shivam-singhal.vercel.app/" />
 
   <meta property="og:type" content="website" />
@@ -40,14 +40,13 @@
   }
   </script>
 
-  <!-- Apply saved / system theme before first paint to avoid a flash -->
+  <!-- Light by default; apply a saved choice before first paint to avoid a flash -->
   <script>
     (function () {
       try {
         var t = localStorage.getItem('theme');
-        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', t);
-      } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+        document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
     })();
   </script>
 

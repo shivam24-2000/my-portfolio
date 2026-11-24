@@ -17,7 +17,6 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-:root,
 :root[data-theme="dark"] {
   --bg: #0a0b0d;
   --bg-alt: #0e1013;
@@ -38,6 +37,7 @@
   color-scheme: dark;
 }
 
+:root,
 :root[data-theme="light"] {
   --bg: #fbfbf9;
   --bg-alt: #f3f3ef;
