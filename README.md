@@ -1,120 +1,91 @@
-# 🚀 Shivam Singhal — Personal Portfolio
+# Shivam Singhal — Portfolio
 
-> A high-performance, cinematic dark-mode portfolio showcasing full-stack engineering, enterprise backend systems, and mobile development.
+> A calm, editorial, evidence-first portfolio for a backend software engineer: Java, Spring Boot and microservices handling ~1M requests/day, owned end to end.
 
-**Live at:** [[shivam-singhal.vercel.app](https://shivamsinghal.dev) ]
+**Live:** [shivam-singhal.vercel.app](https://shivam-singhal.vercel.app/)
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---|---|
-| 🎬 **Boot-up Preloader** | Terminal-style boot sequence animation on page load |
-| ✍️ **Typewriter Hero** | Animated cycling phrases with blinking cursor |
-| 🌌 **Particle Canvas** | Interactive mouse-constellation particle background |
-| 📡 **Tech Marquee** | Infinite scrolling tech stack ticker |
-| 🖱️ **Custom Cursor** | Smooth lagging cursor ring with hover reactive effects |
-| 🔮 **Glassmorphism UI** | Dark premium glassmorphism cards throughout |
-| 💼 **Interactive Experience** | Clickable company tabs with animated impact metric cards |
-| 🎯 **Hacker Scramble Text** | Letter-scramble hover effect on headings |
-| 🖥️ **Terminal Easter Egg** | Fully functional in-page terminal with custom commands |
-| 📊 **Scroll Progress Bar** | Gradient progress bar at the top of the viewport |
-| 🍔 **Mobile Hamburger Menu** | Animated ×/≡ mobile nav with glass backdrop overlay |
-| ⬆️ **Back to Top Button** | Floating gradient button that appears after 300px scroll |
-| 📌 **Sticky Stack Cards** | Projects stack and stick on scroll for cinematic depth |
+| **Light & dark themes** | Soft, low-contrast palettes (warm paper / charcoal) with a toggle, saved preference and a gentle cross-fade on switch |
+| **Impact panel** | Hero card styled like a production health dashboard, with KPIs that count up on scroll |
+| **Hero canvas** | Data "packets" travel along a faint background grid, tinted with the theme accent |
+| **Case studies** | Problem → approach → result write-ups with animated SVG architecture diagrams |
+| **Experience timeline** | Timeline that fills as you scroll |
+| **Tech marquee** | Two seamless, opposite-direction scrolling rows of the stack |
+| **Card spotlight** | Subtle cursor-following highlight on cards |
+| **Scroll progress bar** | Thin accent bar at the top of the viewport |
+| **Copy email** | One-click copy with a toast confirmation |
+| **Accessible by default** | Semantic markup, keyboard-friendly nav, and all motion disabled under `prefers-reduced-motion` |
 
 ---
 
-## 🛠️ Tech Stack
+## Sections
+
+1. **Hero** — Headline, summary, impact panel, tech marquee
+2. **Selected work** — Problems owned end to end (scale, fault tolerance, data layer, production support, audits)
+3. **How I operate** — Lifecycle ownership, designing for failure, measuring before optimising, raising the team's bar
+4. **Experience** — Bank of America, Incedo Inc., VIT Vellore
+5. **Projects** — ColdEmailAgent, NexCode AI, SmartCart
+6. **Toolkit** — Languages, frameworks, data, infra, practices
+7. **Contact** — Copy email, résumé and social links
+
+---
+
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
-| **Structure** | HTML5 / Semantic Markup |
-| **Styling** | Vanilla CSS — Glassmorphism, CSS Grid, Custom Properties |
-| **Animations** | CSS Keyframes + JS `requestAnimationFrame` |
-| **Interactivity** | Vanilla JavaScript (ES6+) — no frameworks |
-| **Fonts** | Outfit + Space Grotesk (Google Fonts) |
-| **Icons** | Font Awesome 6 |
-| **Build Tool** | Vite |
+| **Markup** | Semantic HTML5 |
+| **Styling** | Vanilla CSS with custom-property design tokens for theming |
+| **Interactivity** | Vanilla JavaScript (ES modules) — no frameworks |
+| **Graphics** | Canvas 2D (hero) and inline SVG/SMIL (diagrams) |
+| **Fonts** | Geist, Geist Mono, Instrument Serif (Google Fonts) |
+| **Icons** | Font Awesome 6, Devicon |
+| **Build** | Vite |
+| **Hosting** | Vercel |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 my-portfolio/
 ├── public/
-│   ├── favicon.svg          # Custom 'S' monogram favicon
-│   └── icons.svg
+│   ├── favicon.svg
+│   └── resume.pdf
 ├── src/
-│   ├── style.css            # All styles — design system, components, animations
-│   └── main.js              # All interactivity — cursor, particles, terminal, tabs
-├── index.html               # Single-page app entry point
-├── package.json
-└── vite.config.js
+│   ├── style.css     # Design tokens, light/dark themes, components, animations
+│   └── main.js       # Theme toggle, nav, reveal/count-up, hero canvas, marquee, spotlight
+├── index.html        # Single-page entry point
+└── package.json
 ```
 
 ---
 
-## 🧩 Sections
-
-1. **Hero** — Name, typewriter subtitle, "Open to Work" badge, CTA buttons
-2. **About & Skills** — Bio, core tech skills grid, bento stat boxes, interactive terminal
-3. **Experience** — Interactive two-panel tab layout with impact metrics (Bank of America, Incedo Inc.)
-4. **Selected Works** — Sticky-scroll project cards (AI Interview Platform, Trekr, Weather Station)
-5. **Contact** — Animated conic-gradient border card with email + social links
-6. **Footer** — Three-column layout with nav links, social icons, copyright
-
----
-
-## 💻 Running Locally
+## Running Locally
 
 ```bash
-# Clone the repo
 git clone https://github.com/shivam24-2000/my-portfolio.git
 cd my-portfolio
-
-# Install dependencies
 npm install
-
-# Start dev server
-npm run dev
+npm run dev       # http://localhost:5173
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Build and preview the production bundle:
+
+```bash
+npm run build
+npm run preview
+```
 
 ---
 
-## 🧪 Terminal Easter Egg
-
-Open the portfolio and scroll to the **About** section. Click on the terminal and type:
-
-| Command | Response |
-|---|---|
-| `help` | Lists all available commands |
-| `whoami` | Returns developer bio |
-| `projects` | Lists all featured projects |
-| `skills` | Lists core tech stack |
-| `contact` | Shows contact information |
-| `hire` | 😄 Validates hire status |
-| `sudo` | Permission denied (obviously) |
-| `clear` | Clears terminal history |
-
----
-
-## 📬 Contact
+## Contact
 
 - **Email:** [shivamsinghal24@gmail.com](mailto:shivamsinghal24@gmail.com)
 - **LinkedIn:** [/in/shivam-singhal-538369191](https://www.linkedin.com/in/shivam-singhal-538369191/)
 - **GitHub:** [@shivam24-2000](https://github.com/shivam24-2000)
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-<p align="center">Designed & Built with ❤️ by <strong>Shivam Singhal</strong> · © 2026</p>
