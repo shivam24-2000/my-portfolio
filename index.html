@@ -10,7 +10,7 @@
     content="Backend Software Engineer with 3+ years at Bank of America. Java, Spring Boot and microservices handling ~1M requests/day, owned end to end from system design to incident response. Open to SDE-II / Senior Backend roles." />
   <meta name="author" content="Shivam Singhal" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#fbfbf9" />
+  <meta name="theme-color" content="#f5f4f0" />
   <link rel="canonical" href="https://shivam-singhal.vercel.app/" />
 
   <meta property="og:type" content="website" />
@@ -46,6 +46,7 @@
       try {
         var t = localStorage.getItem('theme');
         document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+        if (t === 'dark') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#141517');
       } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
     })();
   </script>

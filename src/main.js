@@ -8,7 +8,14 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 const themeBtn = document.getElementById('theme-toggle');
 themeBtn?.addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  if (!prefersReducedMotion) {
+    root.classList.add('theme-transition');
+    clearTimeout(themeBtn._t);
+    themeBtn._t = setTimeout(() => root.classList.remove('theme-transition'), 400);
+  }
   root.setAttribute('data-theme', next);
+  document.querySelector('meta[name="theme-color"]')
+    ?.setAttribute('content', next === 'dark' ? '#141517' : '#f5f4f0');
   try { localStorage.setItem('theme', next); } catch { /* storage unavailable */ }
 });
 
@@ -140,7 +147,7 @@ function initHeroCanvas() {
   const GRID = 56;
   let w = 0, h = 0, packets = [], visible = true, raf = 0;
 
-  const readAccent = () => getComputedStyle(root).getPropertyValue('--accent').trim() || '#5ee39a';
+  const readAccent = () => getComputedStyle(root).getPropertyValue('--accent').trim() || '#7cc49e';
   let accent = readAccent();
   new MutationObserver(() => { accent = readAccent(); })
     .observe(root, { attributes: true, attributeFilter: ['data-theme'] });
